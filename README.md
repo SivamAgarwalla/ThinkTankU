@@ -37,10 +37,12 @@ innovation and growth for all college campuses involved.
 
 **Required Must-have Stories**
 
-* User can log in and see feed customized based on their selections/filters
-* User can pick which startups to follow based on industry
-* Register your startup and add members/description
-* Profile pages for user and startups
+* User can log in and view home feed customized based on their selections/filters
+* User can register an account
+* User can pick which startups to follow based on industry and what post type to see on the sorting screen
+* Students can register their startup and add members/description/images
+* Users can create posts to promote/recruit for their startups, start open discussions, and post about themselves to get involved
+* Profile pages for user and startups that can be customized
 * Settings (can be appended to user page)
 
 
@@ -89,9 +91,22 @@ Note that the other screens listed above will not be shown in the tab, but will 
 * Log In Screen
    * Lon In Screen -> Create Account Screen (if user is not registered)
    * Log In Screen -> Home Screen (if the user is already registered)
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* Sign Up Screen
+   * Sign Up Screen -> Log In Screen (once registration is successful)
+* Home Screen
+   * Home Screen -> Post Detail Screen (if user clicks on a post)
+   * Home Screen -> Profile Screen (if the user clicks on the username of the post creator)
+* Sorting Screen
+   * Sorting Screen -> Home Screen (once the desired filters are applied)
+* Create Post Screen
+   * Create Post Screen -> Home Screen (once the post is created the user is taken back to the home screen)
+* Post Detail Screen
+   * Post Detail Screen -> Home Screen (once the user clicks the back button)
+   * Post Detail Screen -> Profile Screen (if the user clicks on the username of the post creator)
+* Profile Screen
+   * Profile Screen -> Post Detail Screen (if the user clicks on any of their recent posts, which are shown on the profile page)
+
+
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
