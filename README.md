@@ -18,7 +18,7 @@ innovation and growth for all college campuses involved.
 ### App Evaluation
 [Evaluation of your app across the following attributes]
 - **Category:** Social Network / Entrepreneurship 
-- **Mobile:** This app would be primary developed using Swift for iOS but then could be later ported to support Android as well. In theory, a web application
+- **Mobile:** This app would be primarily developed using Swift for iOS but then could be later ported to support Android as well. In theory, a web application
               could be designed for it as well, but since the focus is quick connectivity and collaboration, a mobile platform is ideal.
 - **Story:** A news feed style app which shares posts on current student startups, open discussions on potential ideas, and allows students to find startups
              that they would be interested in getting involved in. The user would see all these posts on the Home Screen and would be allowed to interact with
@@ -54,12 +54,12 @@ innovation and growth for all college campuses involved.
 ### 2. Screen Archetypes
 
 * Log in Screen
-   * User that has an account registered can enter their username and password to sign into the application.
-   * If the user does not have an account, there will be a Sign Up button on the button of screen where they can join.
+   * Users that have an account registered can enter their username and password to sign into the application.
+   * If the user does not have an account, there will be a Sign Up button on the button of the screen where they can join.
 * Sign Up Screen
-   * User can enter their Name, Email, Password, School Name, Current Year, Startup Name (Optional) to create an account.
+   * Users can enter their Name, Email, Password, School Name, Current Year, Startup Name (Optional) to create an account.
 * Home Screen
-   * This screen will serve as the main news feed and will contain posts regarding sharing startup ideas, open discussion about the viability of certain ideas, and      posts where either students are looking to work for a startup or startups are looking for students with specific skill sets.
+   * This screen will serve as the main news feed and will contain posts regarding sharing startup ideas, open discussion about the viability of certain ideas, and posts where either students are looking to work for a startup or startups are looking for students with specific skill sets.
 * Sorting Screen
    * On this screen the user can set filters to customize the content that they will see on the HomeScreen. They can customize what companies they want to see
      posts/updates from and what types of posts they want to see in general.
@@ -71,20 +71,24 @@ innovation and growth for all college campuses involved.
 * Profile Screen
    * This will be a custom profile screen for each user which will show their name, profile image, a short bio, skills, and links to relevant social media. 
      It will also show the posts that the user has posted. 
+     
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* Home Screen
+* Sorting Screen
+* Create Post Screen
+* Profile Screen
+
+Note that the other screens listed above will not be shown in the tab, but will rather be shown when the user takes an action on Home Screen.
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
+* Log In Screen
+   * Lon In Screen -> Create Account Screen (if user is not registered)
+   * Log In Screen -> Home Screen (if the user is already registered)
 * [list second screen here]
    * [list screen navigation here]
    * ...
