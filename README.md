@@ -25,8 +25,11 @@ innovation and growth for all college campuses involved.
              the community and find students with similar passions to work with.
 - **Market:** Any student in college could use this app, and to allow for more organization and less cluster, students would be grouped together based on what
               college they go to. This means that students would only be able to see startups and discussions posts by other students on their campus.
-- **Habit:**
-- **Scope:**
+- **Habit:** This app could be used as often as the user desires. We expect that once the user becomes involved in a startup themselves they will be using
+             the app much more often, as they will now be a part of the ecosystem. 
+- **Scope:** While the app is starting off as a social network for sharing student based startups and fostering open discussion, it can transform to become a
+             whole ecosystem. It can be extended to support campuses around the area, have chat features, organize hackathons, and host company presentations
+             so startups can get their ideas out to a larger audience.
 
 ## Product Spec
 
@@ -50,12 +53,24 @@ innovation and growth for all college campuses involved.
 
 ### 2. Screen Archetypes
 
-* [list first screen here]
-   * [list associated required story here]
-   * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* Log in Screen
+   * User that has an account registered can enter their username and password to sign into the application.
+   * If the user does not have an account, there will be a Sign Up button on the button of screen where they can join.
+* Sign Up Screen
+   * User can enter their Name, Email, Password, School Name, Current Year, Startup Name (Optional) to create an account.
+* Home Screen
+   * This screen will serve as the main news feed and will contain posts regarding sharing startup ideas, open discussion about the viability of certain ideas, and      posts where either students are looking to work for a startup or startups are looking for students with specific skill sets.
+* Sorting Screen
+   * On this screen the user can set filters to customize the content that they will see on the HomeScreen. They can customize what companies they want to see
+     posts/updates from and what types of posts they want to see in general.
+* Create Post Screen
+   * This will allow users to create a post about either their startup, an open discussion post, a post looking to join a startup, etc.
+   * The fields on this screen will include the Title, Description, Relevant Image (Optional), and the type of post.
+* Post Detail Screen
+   * This page will be shown when the user clicks on a post on the home screen and will have more details regarding the post and a comment section.
+* Profile Screen
+   * This will be a custom profile screen for each user which will show their name, profile image, a short bio, skills, and links to relevant social media. 
+     It will also show the posts that the user has posted. 
 
 ### 3. Navigation
 
