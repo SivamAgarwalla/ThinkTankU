@@ -34,13 +34,19 @@ innovation and growth for all college campuses involved.
 
 **Required Must-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* User can log in and see feed customized based on their selections/filters
+* User can pick which startups to follow based on industry
+* Register your startup and add members/description
+* Profile pages for user and startups
+* Settings (can be appended to user page)
+
 
 **Optional Nice-to-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* Messaging feature
+* Random Company profile finder for exploration
+* App theme changes based on university
+
 
 ### 2. Screen Archetypes
 
