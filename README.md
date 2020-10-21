@@ -43,7 +43,7 @@ innovation and growth for all college campuses involved.
 
 **Optional Nice-to-have Stories**
 
-* Messaging feature
+* Messaging feature to allow students to communicate directly on the app
 * Random Company profile finder for exploration
 * App theme changes based on university
 
