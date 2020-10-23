@@ -110,7 +110,7 @@ Note that the other screens listed above will not be shown in the tab, but will 
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="Screen Shot 2020-10-22 at 10.37.13 PM.png" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
