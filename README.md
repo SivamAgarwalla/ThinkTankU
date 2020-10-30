@@ -155,19 +155,18 @@ Note that the other screens listed above will not be shown in the tab, but will 
 #### List of network requests by screen
    - Login Screen
       - (Read/GET) User Data (Verify email and password match one of the user records)
-         ```swift
-         let query = PFQuery(className:"Post")
-         query.whereKey("author", equalTo: currentUser)
-         query.order(byDescending: "createdAt")
-         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
-            if let error = error { 
-               print(error.localizedDescription)
-            } else if let posts = posts {
-               print("Successfully retrieved \(posts.count) posts.")
-           // TODO: Do something with posts...
-            }
-         }
-         ```
+```swift
+         let email = emailField.text!
+let password = passwordField.text!
+        
+PFUser.logInWithUsername(inBackground: email, password: password) { (user, error) in
+    if user != nil {
+        self.performSegue(withIdentifier: "loginSegue", sender: nil)
+    } else {
+        print("Error: \(error?.localizedDescription ?? "There was an error logging in!")")
+    }
+}
+```
    - Sign Up Screen
       - (Create/POST) Create/Register a new user object
    - Home Screen
