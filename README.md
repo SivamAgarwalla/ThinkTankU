@@ -195,4 +195,26 @@ user.signUpInBackground { (success, error) in
       - (Update/PUT) Add a like to the Likes array or comment to the Comments Array for the specific post object
    - Profile Screen
       - (Read/GET) Query logged in user object
+```swift
+guard let user = PFUser.current() else {
+    print("Failed to get user")
+}
+let username = user["profilePic"] as? String
+let bio = user["bio"] as? String
+let profilePicFile = user["profilePic"] as! PFFileObject
+```
+
       - (Update/PUT) Update either the profile image or the bio associated with the user
+```swift
+    guard let user = PFUser.current() else {
+    print("Failed to get user")
+}
+user["username"] = "JohnSmith"
+user["bio"] = "3rd year student looking for students to collaborate with for gaming projects"
+
+let profilePicData = photoView.image?.pngData()
+let file = PFFileObject(name: "profile.png", data: profilePicData!)
+user["profilePic"] = file
+
+user.save()
+```
