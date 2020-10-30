@@ -132,7 +132,17 @@ Note that the other screens listed above will not be shown in the tab, but will 
 | Profile Picture (Optional) | File               | A picture/avatar for the user           |
 
 **Posts**
-
+| Property           | Type                        | Description                                                                               |
+|--------------------|-----------------------------|-------------------------------------------------------------------------------------------|
+| objectID           | String                      | Unique ID for each post (default field)                                                   |
+| Author             | Pointer to User             | The user that created the post                                                            |
+| Image (Optional)   | File                        | Image associated with the post                                                            |
+| Startup (Optional) | String                      | The startup that the post is related to                                                   |
+| Post Type          | String                      | The type of post that is being created                                                    |
+| Title              | String                      | Title associated with post                                                                |
+| Description        | String                      | Description of the post                                                                   |
+| Comments           | Array[Pointers to Comments] | Will contain references to all the comments associated with the post                      |
+| Likes              | Array[Pointers to User]     | Will store all the likes for the post, no duplicate User IDs will be allowed in the array |
 **Comments**
 
 **Startups**
