@@ -242,19 +242,33 @@ Note that the other screens listed above will not be shown in the tab, but will 
    - Post Detail Screen
       - (Read/GET) Query the specific post object for which to display additional details
       - (Create/POST) Create a new comment object for a specific post
+      ```swift
+      let comment = PFObject(className: "Comments")
+      comment["text"] = commentText // Is collected when user hits send on the messageInputBar
+      comment["post"] = selectedPost // Global variable that tracks the selectedPost
+      comment["author"] = PFUser.current()!
+
+      selectedPost.add(comment, forKey: "comments")
+      selectedPost.saveInBackground { (success, error) in
+          if success {
+              print("Comment saved")
+          } else {
+              print("Error saving comment")
+          }
+      }
+      ```
       - (Update/PUT) Add a like to the Likes array or comment to the Comments Array for the specific post object
    - Profile Screen
       - (Read/GET) Query logged in user object
-        ```swift
-         guard let user = PFUser.current() else {
-         print("Failed to get user")
-         }
-         let username = user["profilePic"] as? String
-         let bio = user["bio"] as? String
-         let profilePicFile = user["profilePic"] as! PFFileObject
-          ```
+      ```swift
+      guard let user = PFUser.current() else {
+      print("Failed to get user")
+      }
+      let username = user["profilePic"] as? String
+      let bio = user["bio"] as? String
+      let profilePicFile = user["profilePic"] as! PFFileObject
+      ```
       - (Update/PUT) Update either the profile image or the bio associated with the user
-    
       ```swift
       guard let user = PFUser.current() else {
       print("Failed to get user")
