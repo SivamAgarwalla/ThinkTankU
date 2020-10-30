@@ -241,6 +241,19 @@ Note that the other screens listed above will not be shown in the tab, but will 
       ```
    - Post Detail Screen
       - (Read/GET) Query the specific post object for which to display additional details
+      ```swift
+      let query = PFQuery(className:"Posts")
+      // selectedPost will be a global variable on this screen that is passed from the HomeScreen
+      query.whereKey("objectID", equalTo: selectedPost["objectID"])
+      query.findObjectsInBackground { (post: [PFObject]?, error: Error?) in
+         if let error = error {
+            print(error.localizedDescription)
+         } else if let post = post {
+            print("Successfully retrieved specified post games.")
+            // TODO: Do something with games...
+         }
+      }
+      ```
       - (Create/POST) Create a new comment object for a specific post and add it to the post's comment array
       ```swift
       let comment = PFObject(className: "Comments")
