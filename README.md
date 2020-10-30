@@ -143,6 +143,7 @@ Note that the other screens listed above will not be shown in the tab, but will 
 | Description        | String                      | Description of the post                                                                   |
 | Comments           | Array[Pointers to Comments] | Will contain references to all the comments associated with the post                      |
 | Likes              | Array[Pointers to User]     | Will store all the likes for the post, no duplicate User IDs will be allowed in the array |
+
 **Comments**
 
 **Startups**
