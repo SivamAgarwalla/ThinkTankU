@@ -206,13 +206,14 @@ Note that the other screens listed above will not be shown in the tab, but will 
 
       - (Update/PUT) Add a like to the Likes array for the specific post object
       ```swift
+      let user = PFUSer.current()
       let query = PFQuery(className: "Posts")
       query.getObjectInBackground(withId: "likesArray"){ (likesArray: PFObject?, error: Error?) in
           if let error = error {
             print(error.localizedDescription)
           } else if let likesArray = likesArray {
-            likesArray.append(_ newUserIdt: userID)
-            gameScore.saveInBackground()
+            likesArray.append(_ newUserIdt: user.userID)
+            likesArray.saveInBackground()
           }
       }
       ```
