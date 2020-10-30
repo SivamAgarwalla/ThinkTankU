@@ -212,7 +212,7 @@ Note that the other screens listed above will not be shown in the tab, but will 
             print(error.localizedDescription)
           } else if let likesArray = likesArray {
             likesArray.append(_ newUserIdt: userID)
-            gameScore.saveInBackground()
+            likesArray.saveInBackground()
           }
       }
       ```
