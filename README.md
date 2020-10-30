@@ -186,6 +186,18 @@ user.signUpInBackground { (success, error) in
 ```
    - Home Screen
       - (Read/GET) All posts in the database, will be sorted by time created (newest appears first)
+```swift
+let query = PFQuery(className: "Posts")
+query.includeKeys(["author", "comments", "likes"])
+query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
+   if let error = error {
+      print(error.localizedDescription)
+   } else if let posts = posts {
+      print("Successfully retrieved \(posts.count) posts.")
+      // TODO: Do something with the posts
+   }
+}
+```
       - (Update/PUT) Add a like to the Likes array for the specific post object
    - Create Post Screen
       - (Create/POST) Create a new post object
