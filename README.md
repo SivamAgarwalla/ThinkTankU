@@ -206,19 +206,39 @@ Note that the other screens listed above will not be shown in the tab, but will 
 
       - (Update/PUT) Add a like to the Likes array for the specific post object
       ```swift
-      let user = PFUSer.current()
       let query = PFQuery(className: "Posts")
       query.getObjectInBackground(withId: "likesArray"){ (likesArray: PFObject?, error: Error?) in
           if let error = error {
             print(error.localizedDescription)
           } else if let likesArray = likesArray {
-            likesArray.append(_ newUserIdt: user.userID)
-            likesArray.saveInBackground()
+            likesArray.append(_ newUserIdt: userID)
+            gameScore.saveInBackground()
           }
       }
       ```
    - Create Post Screen
       - (Create/POST) Create a new post object
+      ```swift
+      let post = PFObject(className: "Posts")
+
+      post["author"] = PFUser.current()!
+      post["title"] = titleField.text!
+      post["description"] = descriptionField.text!
+      post["type"] = typeField.text! // TODO: Change to Picker Type in future
+      post["startup"] startupField.text!
+
+      let imageData = imageView.image!.pngData()
+      let file = PFFileObject(data: imageData!)
+      post["image"] = file
+
+      post.saveInBackground { (success, error) in
+          if success {
+              // Transition back to the home screen
+          } else {
+              print("Error: \(error?.localizedDescription ?? "There was an error creating the post.")")
+          }
+      }
+      ```
    - Post Detail Screen
       - (Read/GET) Query the specific post object for which to display additional details
       - (Create/POST) Create a new comment object for a specific post
