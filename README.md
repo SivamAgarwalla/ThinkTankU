@@ -215,7 +215,8 @@ let username = user["profilePic"] as? String
 let bio = user["bio"] as? String
 let profilePicFile = user["profilePic"] as! PFFileObject
 ```
-      - (Update/PUT) Update either the profile image or the bio associated with the user
+   - (Update/PUT) Update either the profile image or the bio associated with the user
+    
 ```swift
     guard let user = PFUser.current() else {
     print("Failed to get user")
