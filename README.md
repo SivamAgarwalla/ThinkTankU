@@ -156,7 +156,7 @@ Note that the other screens listed above will not be shown in the tab, but will 
    - Login Screen
       - (Read/GET) User Data (Verify email and password match one of the user records)
 ```swift
-         let email = emailField.text!
+let email = emailField.text!
 let password = passwordField.text!
         
 PFUser.logInWithUsername(inBackground: email, password: password) { (user, error) in
