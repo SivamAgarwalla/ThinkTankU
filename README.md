@@ -152,6 +152,23 @@ Note that the other screens listed above will not be shown in the tab, but will 
 | Text     | String          | The content/text of the comment            |
 
 ### Networking
-- [Add list of network requests by screen ]
+#### List of network requests by screen
+   - Login Screen
+      - (Read/GET) User Data (Verify email and password match one of the user records)
+   - Sign Up Screen
+      - (Create/POST) Create/Register a new user object
+   - Home Screen
+      - (Read/GET) All posts in the database, will be sorted by time created (newest appears first)
+      - (Update/PUT) Add a like to the Likes array for the specific post object
+   - Create Post Screen
+      - (Create/POST) Create a new post object
+   - Post Detail Screen
+      - (Read/GET) Query the specific post object for which to display additional details
+      - (Create/POST) Create a new comment object for a specific post
+      - (Update/PUT) Add a like to the Likes array or comment to the Comments Array for the specific post object
+   - Profile Screen
+      - (Read/GET) Query logged in user object
+      - (Update/PUT) Update either the profile image or the bio associated with the user
+
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
