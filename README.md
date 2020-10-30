@@ -119,7 +119,7 @@ Note that the other screens listed above will not be shown in the tab, but will 
 ## Schema 
 ### Models
 
-** Users **
+**Users**
 | Property                   | Type               | Description                             |
 |----------------------------|--------------------|-----------------------------------------|
 | objectID                   | String             | Unique ID for each user (default field) |
@@ -130,6 +130,12 @@ Note that the other screens listed above will not be shown in the tab, but will 
 | Startup (Optional)         | Pointer to Startup | The startup the user is associated with |
 | Bio (Optional)             | String             | A short description of the user         |
 | Profile Picture (Optional) | File               | A picture/avatar for the user           |
+
+**Posts**
+
+**Comments**
+
+**Startups**
 
 
 ### Networking
