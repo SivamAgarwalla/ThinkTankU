@@ -169,6 +169,21 @@ PFUser.logInWithUsername(inBackground: email, password: password) { (user, error
 ```
    - Sign Up Screen
       - (Create/POST) Create/Register a new user object
+```swift
+let user = PFUser()
+user.name = nameField.text
+user.email = emailField.text
+user.password = passwordField.text
+user.school = schoolField.text
+user.startup = startupField.text
+user.signUpInBackground { (success, error) in
+    if success {
+        self.performSegue(withIdentifier: "loginSegue", sender: nil)
+    } else {
+        print("Error: \(error?.localizedDescription ?? "There was an error signing up!")")
+    }   
+}
+```
    - Home Screen
       - (Read/GET) All posts in the database, will be sorted by time created (newest appears first)
       - (Update/PUT) Add a like to the Likes array for the specific post object
