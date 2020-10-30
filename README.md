@@ -241,7 +241,7 @@ Note that the other screens listed above will not be shown in the tab, but will 
       ```
    - Post Detail Screen
       - (Read/GET) Query the specific post object for which to display additional details
-      - (Create/POST) Create a new comment object for a specific post
+      - (Create/POST) Create a new comment object for a specific post and add it to the post's comment array
       ```swift
       let comment = PFObject(className: "Comments")
       comment["text"] = commentText // Is collected when user hits send on the messageInputBar
@@ -257,7 +257,7 @@ Note that the other screens listed above will not be shown in the tab, but will 
           }
       }
       ```
-      - (Update/PUT) Add a like to the Likes array or comment to the Comments Array for the specific post object
+      - (Update/PUT) Add a like to the Likes array -> SAME snippet as adding a like to the like's array in the Home Screen
    - Profile Screen
       - (Read/GET) Query logged in user object
       ```swift
