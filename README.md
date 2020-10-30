@@ -117,9 +117,21 @@ Note that the other screens listed above will not be shown in the tab, but will 
 ### [BONUS] Interactive Prototype
 
 ## Schema 
-[This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+
+** Users **
+| Property                   | Type               | Description                             |
+|----------------------------|--------------------|-----------------------------------------|
+| objectID                   | String             | Unique ID for each user (default field) |
+| Name                       | String             | User first and last name                |
+| Email                      | String             | User’s email linked with the account    |
+| Password (Hash)            | String             | Hashed value of the user’s password     |
+| School                     | String             | The school that the user attends        |
+| Startup (Optional)         | Pointer to Startup | The startup the user is associated with |
+| Bio (Optional)             | String             | A short description of the user         |
+| Profile Picture (Optional) | File               | A picture/avatar for the user           |
+
+
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
