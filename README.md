@@ -145,9 +145,11 @@ Note that the other screens listed above will not be shown in the tab, but will 
 | Likes              | Array[Pointers to User]     | Will store all the likes for the post, no duplicate User IDs will be allowed in the array |
 
 **Comments**
-
-**Startups**
-
+| Property | Types           | Description                                |
+|----------|-----------------|--------------------------------------------|
+| objectID | String          | Unique ID for each comment (default field) |
+| Author   | Pointer to User | The user that created the comment          |
+| Text     | String          | The content/text of the comment            |
 
 ### Networking
 - [Add list of network requests by screen ]
