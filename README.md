@@ -155,49 +155,55 @@ Note that the other screens listed above will not be shown in the tab, but will 
 #### List of network requests by screen
    - Login Screen
       - (Read/GET) User Data (Verify email and password match one of the user records)
-```swift
-let email = emailField.text!
-let password = passwordField.text!
-        
-PFUser.logInWithUsername(inBackground: email, password: password) { (user, error) in
-    if user != nil {
-        self.performSegue(withIdentifier: "loginSegue", sender: nil)
-    } else {
-        print("Error: \(error?.localizedDescription ?? "There was an error logging in!")")
-    }
-}
-```
+      
+      ```swift
+      let email = emailField.text!
+      let password = passwordField.text!
+
+      PFUser.logInWithUsername(inBackground: email, password: password) { (user, error) in
+          if user != nil {
+              self.performSegue(withIdentifier: "loginSegue", sender: nil)
+          } else {
+              print("Error: \(error?.localizedDescription ?? "There was an error logging in!")")
+          }
+      }
+      ```
+
    - Sign Up Screen
       - (Create/POST) Create/Register a new user object
-```swift
-let user = PFUser()
-user.name = nameField.text
-user.email = emailField.text
-user.password = passwordField.text
-user.school = schoolField.text
-user.startup = startupField.text
-user.signUpInBackground { (success, error) in
-    if success {
-        self.performSegue(withIdentifier: "loginSegue", sender: nil)
-    } else {
-        print("Error: \(error?.localizedDescription ?? "There was an error signing up!")")
-    }   
-}
-```
+      
+      ```swift
+      let user = PFUser()
+      user.name = nameField.text
+      user.email = emailField.text
+      user.password = passwordField.text
+      user.school = schoolField.text
+      user.startup = startupField.text
+      user.signUpInBackground { (success, error) in
+          if success {
+              self.performSegue(withIdentifier: "loginSegue", sender: nil)
+          } else {
+              print("Error: \(error?.localizedDescription ?? "There was an error signing up!")")
+          }   
+      }
+      ```
+
    - Home Screen
       - (Read/GET) All posts in the database, will be sorted by time created (newest appears first)
-```swift
-let query = PFQuery(className: "Posts")
-query.includeKeys(["author", "comments", "likes"])
-query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
-   if let error = error {
-      print(error.localizedDescription)
-   } else if let posts = posts {
-      print("Successfully retrieved \(posts.count) posts.")
-      // TODO: Do something with the posts
-   }
-}
-```
+      
+      ```swift
+      let query = PFQuery(className: "Posts")
+      query.includeKeys(["author", "comments", "likes"])
+      query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
+         if let error = error {
+            print(error.localizedDescription)
+         } else if let posts = posts {
+            print("Successfully retrieved \(posts.count) posts.")
+            // TODO: Do something with the posts
+         }
+      }
+      ```
+
       - (Update/PUT) Add a like to the Likes array for the specific post object
    - Create Post Screen
       - (Create/POST) Create a new post object
