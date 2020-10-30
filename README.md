@@ -182,6 +182,3 @@ Note that the other screens listed above will not be shown in the tab, but will 
    - Profile Screen
       - (Read/GET) Query logged in user object
       - (Update/PUT) Update either the profile image or the bio associated with the user
-
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
