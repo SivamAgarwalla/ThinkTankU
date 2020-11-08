@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		E030D3FC253FD3A800BE507F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030D3FB253FD3A800BE507F /* AppDelegate.swift */; };
 		E030D3FE253FD3A800BE507F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030D3FD253FD3A800BE507F /* SceneDelegate.swift */; };
-		E030D400253FD3A800BE507F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030D3FF253FD3A800BE507F /* ViewController.swift */; };
 		E030D403253FD3A800BE507F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E030D401253FD3A800BE507F /* Main.storyboard */; };
 		E030D405253FD3B800BE507F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E030D404253FD3B800BE507F /* Assets.xcassets */; };
 		E030D408253FD3B800BE507F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E030D406253FD3B800BE507F /* LaunchScreen.storyboard */; };
 		E030D413253FD3B800BE507F /* ThinkTankUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030D412253FD3B800BE507F /* ThinkTankUTests.swift */; };
 		E030D41E253FD3B800BE507F /* ThinkTankUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030D41D253FD3B800BE507F /* ThinkTankUUITests.swift */; };
+		E036ED462557A08B00300EB0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E036ED452557A08B00300EB0 /* LoginViewController.swift */; };
+		E036ED482558A98700300EB0 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E036ED472558A98700300EB0 /* SignupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,6 @@
 		E030D3F8253FD3A800BE507F /* ThinkTankU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThinkTankU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E030D3FB253FD3A800BE507F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E030D3FD253FD3A800BE507F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E030D3FF253FD3A800BE507F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E030D402253FD3A800BE507F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E030D404253FD3B800BE507F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E030D407253FD3B800BE507F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		E030D419253FD3B800BE507F /* ThinkTankUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThinkTankUUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E030D41D253FD3B800BE507F /* ThinkTankUUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThinkTankUUITests.swift; sourceTree = "<group>"; };
 		E030D41F253FD3B800BE507F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E036ED452557A08B00300EB0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E036ED472558A98700300EB0 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +103,12 @@
 			children = (
 				E030D3FB253FD3A800BE507F /* AppDelegate.swift */,
 				E030D3FD253FD3A800BE507F /* SceneDelegate.swift */,
-				E030D3FF253FD3A800BE507F /* ViewController.swift */,
 				E030D401253FD3A800BE507F /* Main.storyboard */,
 				E030D404253FD3B800BE507F /* Assets.xcassets */,
 				E030D406253FD3B800BE507F /* LaunchScreen.storyboard */,
 				E030D409253FD3B800BE507F /* Info.plist */,
+				E036ED452557A08B00300EB0 /* LoginViewController.swift */,
+				E036ED472558A98700300EB0 /* SignupViewController.swift */,
 			);
 			path = ThinkTankU;
 			sourceTree = "<group>";
@@ -259,8 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E030D400253FD3A800BE507F /* ViewController.swift in Sources */,
+				E036ED462557A08B00300EB0 /* LoginViewController.swift in Sources */,
 				E030D3FC253FD3A800BE507F /* AppDelegate.swift in Sources */,
+				E036ED482558A98700300EB0 /* SignupViewController.swift in Sources */,
 				E030D3FE253FD3A800BE507F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
