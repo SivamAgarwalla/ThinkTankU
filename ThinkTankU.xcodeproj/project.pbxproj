@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C7A5F0612A971E94D24303C /* Pods_ThinkTankU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06196608C26BB2F06F99CCED /* Pods_ThinkTankU.framework */; };
+		990E30A3D7355E0D10CA11A7 /* Pods_ThinkTankU_ThinkTankUUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01777CE07EC5AB9566EC9712 /* Pods_ThinkTankU_ThinkTankUUITests.framework */; };
+		C31B56E71F8A78F1AA872F0A /* Pods_ThinkTankUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECB0F6C0178007CFB7FBA7E /* Pods_ThinkTankUTests.framework */; };
 		E030D3FC253FD3A800BE507F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030D3FB253FD3A800BE507F /* AppDelegate.swift */; };
 		E030D3FE253FD3A800BE507F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030D3FD253FD3A800BE507F /* SceneDelegate.swift */; };
 		E030D403253FD3A800BE507F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E030D401253FD3A800BE507F /* Main.storyboard */; };
@@ -36,6 +39,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01777CE07EC5AB9566EC9712 /* Pods_ThinkTankU_ThinkTankUUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThinkTankU_ThinkTankUUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		06196608C26BB2F06F99CCED /* Pods_ThinkTankU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThinkTankU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ECB0F6C0178007CFB7FBA7E /* Pods_ThinkTankUTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThinkTankUTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		247E0B1CF1E85977930938EC /* Pods-ThinkTankU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThinkTankU.release.xcconfig"; path = "Target Support Files/Pods-ThinkTankU/Pods-ThinkTankU.release.xcconfig"; sourceTree = "<group>"; };
+		24CA162F39A3C96EC1DE3C73 /* Pods-ThinkTankU-ThinkTankUUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThinkTankU-ThinkTankUUITests.debug.xcconfig"; path = "Target Support Files/Pods-ThinkTankU-ThinkTankUUITests/Pods-ThinkTankU-ThinkTankUUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6AECA90361EB65B9CC20A1EB /* Pods-ThinkTankU-ThinkTankUUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThinkTankU-ThinkTankUUITests.release.xcconfig"; path = "Target Support Files/Pods-ThinkTankU-ThinkTankUUITests/Pods-ThinkTankU-ThinkTankUUITests.release.xcconfig"; sourceTree = "<group>"; };
+		936E59E5BBACBAB453CC1165 /* Pods-ThinkTankU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThinkTankU.debug.xcconfig"; path = "Target Support Files/Pods-ThinkTankU/Pods-ThinkTankU.debug.xcconfig"; sourceTree = "<group>"; };
+		9A960A361F1F5D5A333C6519 /* Pods-ThinkTankUTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThinkTankUTests.debug.xcconfig"; path = "Target Support Files/Pods-ThinkTankUTests/Pods-ThinkTankUTests.debug.xcconfig"; sourceTree = "<group>"; };
+		ACE543AF243F6DFD764A4332 /* Pods-ThinkTankUTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThinkTankUTests.release.xcconfig"; path = "Target Support Files/Pods-ThinkTankUTests/Pods-ThinkTankUTests.release.xcconfig"; sourceTree = "<group>"; };
 		E030D3F8253FD3A800BE507F /* ThinkTankU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThinkTankU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E030D3FB253FD3A800BE507F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E030D3FD253FD3A800BE507F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C7A5F0612A971E94D24303C /* Pods_ThinkTankU.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C31B56E71F8A78F1AA872F0A /* Pods_ThinkTankUTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +86,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				990E30A3D7355E0D10CA11A7 /* Pods_ThinkTankU_ThinkTankUUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		280AC311959E8E8B53212E94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06196608C26BB2F06F99CCED /* Pods_ThinkTankU.framework */,
+				01777CE07EC5AB9566EC9712 /* Pods_ThinkTankU_ThinkTankUUITests.framework */,
+				0ECB0F6C0178007CFB7FBA7E /* Pods_ThinkTankUTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F4BDCDE05242691F5B92BFE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				936E59E5BBACBAB453CC1165 /* Pods-ThinkTankU.debug.xcconfig */,
+				247E0B1CF1E85977930938EC /* Pods-ThinkTankU.release.xcconfig */,
+				24CA162F39A3C96EC1DE3C73 /* Pods-ThinkTankU-ThinkTankUUITests.debug.xcconfig */,
+				6AECA90361EB65B9CC20A1EB /* Pods-ThinkTankU-ThinkTankUUITests.release.xcconfig */,
+				9A960A361F1F5D5A333C6519 /* Pods-ThinkTankUTests.debug.xcconfig */,
+				ACE543AF243F6DFD764A4332 /* Pods-ThinkTankUTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E030D3EF253FD3A700BE507F = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +124,8 @@
 				E030D411253FD3B800BE507F /* ThinkTankUTests */,
 				E030D41C253FD3B800BE507F /* ThinkTankUUITests */,
 				E030D3F9253FD3A800BE507F /* Products */,
+				3F4BDCDE05242691F5B92BFE /* Pods */,
+				280AC311959E8E8B53212E94 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E030D422253FD3B800BE507F /* Build configuration list for PBXNativeTarget "ThinkTankU" */;
 			buildPhases = (
+				E97A958DEE2C6A50FBD4EC3C /* [CP] Check Pods Manifest.lock */,
 				E030D3F4253FD3A700BE507F /* Sources */,
 				E030D3F5253FD3A700BE507F /* Frameworks */,
 				E030D3F6253FD3A700BE507F /* Resources */,
+				BEA13EAA9051ADB3CFD3FE36 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +198,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E030D425253FD3B800BE507F /* Build configuration list for PBXNativeTarget "ThinkTankUTests" */;
 			buildPhases = (
+				7269E6BA8666EB72E4911435 /* [CP] Check Pods Manifest.lock */,
 				E030D40A253FD3B800BE507F /* Sources */,
 				E030D40B253FD3B800BE507F /* Frameworks */,
 				E030D40C253FD3B800BE507F /* Resources */,
@@ -173,9 +217,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E030D428253FD3B800BE507F /* Build configuration list for PBXNativeTarget "ThinkTankUUITests" */;
 			buildPhases = (
+				E59E1DF3AA85BFC8BD453440 /* [CP] Check Pods Manifest.lock */,
 				E030D415253FD3B800BE507F /* Sources */,
 				E030D416253FD3B800BE507F /* Frameworks */,
 				E030D417253FD3B800BE507F /* Resources */,
+				C7E59F3D9CAEB143D0FC864C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -256,6 +302,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7269E6BA8666EB72E4911435 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ThinkTankUTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BEA13EAA9051ADB3CFD3FE36 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThinkTankU/Pods-ThinkTankU-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThinkTankU/Pods-ThinkTankU-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThinkTankU/Pods-ThinkTankU-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7E59F3D9CAEB143D0FC864C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThinkTankU-ThinkTankUUITests/Pods-ThinkTankU-ThinkTankUUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ThinkTankU-ThinkTankUUITests/Pods-ThinkTankU-ThinkTankUUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ThinkTankU-ThinkTankUUITests/Pods-ThinkTankU-ThinkTankUUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E59E1DF3AA85BFC8BD453440 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ThinkTankU-ThinkTankUUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E97A958DEE2C6A50FBD4EC3C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ThinkTankU-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E030D3F4253FD3A700BE507F /* Sources */ = {
@@ -436,6 +585,7 @@
 		};
 		E030D423253FD3B800BE507F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 936E59E5BBACBAB453CC1165 /* Pods-ThinkTankU.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -453,6 +603,7 @@
 		};
 		E030D424253FD3B800BE507F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 247E0B1CF1E85977930938EC /* Pods-ThinkTankU.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -470,6 +621,7 @@
 		};
 		E030D426253FD3B800BE507F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A960A361F1F5D5A333C6519 /* Pods-ThinkTankUTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -491,6 +643,7 @@
 		};
 		E030D427253FD3B800BE507F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACE543AF243F6DFD764A4332 /* Pods-ThinkTankUTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +665,7 @@
 		};
 		E030D429253FD3B800BE507F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24CA162F39A3C96EC1DE3C73 /* Pods-ThinkTankU-ThinkTankUUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -531,6 +685,7 @@
 		};
 		E030D42A253FD3B800BE507F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AECA90361EB65B9CC20A1EB /* Pods-ThinkTankU-ThinkTankUUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

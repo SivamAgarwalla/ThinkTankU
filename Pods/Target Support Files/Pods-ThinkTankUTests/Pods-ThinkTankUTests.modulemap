@@ -1,0 +1,6 @@
+framework module Pods_ThinkTankUTests {
+  umbrella header "Pods-ThinkTankUTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
