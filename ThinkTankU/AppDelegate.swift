@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        UITabBar.appearance().tintColor = .systemPurple
         // Override point for customization after application launch.
         let parseConfig = ParseClientConfiguration {
             $0.applicationId = "JkSpHU7UYQsb10QFppyt2uxchlm7Yxwi5CyHCi5P"
