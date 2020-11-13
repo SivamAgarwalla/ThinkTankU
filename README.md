@@ -295,3 +295,6 @@ Note that the other screens listed above will not be shown in the tab, but will 
 
       user.save()
       ```
+Video Walkthrough
+![](login.gif)
+![](homeandPost.gif)
