@@ -116,14 +116,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="460" id="QZ6-X8-BbL">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="460" id="QZ6-X8-BbL" customClass="PostCell" customModule="ThinkTankU" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="460"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QZ6-X8-BbL" id="bIO-OD-X7q">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="460"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fdm-fw-V7c">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fdm-fw-V7c">
                                                     <rect key="frame" x="0.0" y="112.5" width="414" height="300"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="414" id="IRn-gv-9Xn"/>
@@ -179,9 +179,18 @@
                                                 <constraint firstItem="Rfe-OM-pL6" firstAttribute="top" secondItem="bIO-OD-X7q" secondAttribute="topMargin" constant="2" id="hHH-xl-3QI"/>
                                                 <constraint firstItem="Fdm-fw-V7c" firstAttribute="leading" secondItem="bIO-OD-X7q" secondAttribute="leading" id="jGr-QT-dvc"/>
                                                 <constraint firstItem="aib-11-XUz" firstAttribute="top" secondItem="bIO-OD-X7q" secondAttribute="top" constant="8" id="jKy-Bc-1bL"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Fdm-fw-V7c" secondAttribute="bottom" constant="45" id="tEl-B4-yKg"/>
                                                 <constraint firstAttribute="trailing" secondItem="Fdm-fw-V7c" secondAttribute="trailing" id="vri-cW-0wp"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="postDescription" destination="YOE-ko-f1v" id="oUP-xc-blS"/>
+                                            <outlet property="postImageView" destination="Fdm-fw-V7c" id="vvk-y7-yap"/>
+                                            <outlet property="postTitle" destination="4IX-Gi-5uo" id="PAC-sa-aBe"/>
+                                            <outlet property="userImageView" destination="aib-11-XUz" id="rbQ-br-Z0F"/>
+                                            <outlet property="userStartup" destination="c1N-DU-dBh" id="YiS-hR-ut2"/>
+                                            <outlet property="username" destination="Rfe-OM-pL6" id="EPM-8I-aSF"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -190,6 +199,9 @@
                         <viewLayoutGuide key="safeArea" id="WWK-MT-79o"/>
                     </view>
                     <navigationItem key="navigationItem" title="ThinkTankU" id="gDp-T5-cZ0"/>
+                    <connections>
+                        <outlet property="postsTableView" destination="tQd-LB-K5o" id="5wf-b1-0eJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K74-Jl-AiC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -313,7 +325,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Bmg-ph-hlG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YpD-qF-zcG">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -347,7 +359,6 @@
                                             <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="onPostSave:" destination="x8X-yb-kIv" id="BmN-ic-9aU"/>
-                                                <segue destination="yhV-tJ-JkY" kind="show" id="bmR-cJ-tuw"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -455,7 +466,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="AbJ-2X-t3D"/>
-        <segue reference="bmR-cJ-tuw"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="house" catalog="system" width="128" height="110"/>
