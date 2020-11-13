@@ -232,13 +232,12 @@
         <!--Home-->
         <scene sceneID="LFu-rs-cXd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4LN-Cl-Isj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController wantsFullScreenLayout="YES" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="yhV-tJ-JkY" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="flw-5B-sqM"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Bmg-ph-hlG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YpD-qF-zcG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -249,6 +248,7 @@
                         <segue destination="Tij-AE-YdX" kind="relationship" relationship="rootViewController" id="xZC-eE-DI9"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4LN-Cl-Isj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="619" y="1564"/>
         </scene>
@@ -271,6 +271,7 @@
                                             <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="onPostSave:" destination="x8X-yb-kIv" id="BmN-ic-9aU"/>
+                                                <segue destination="yhV-tJ-JkY" kind="show" id="bmR-cJ-tuw"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -353,7 +354,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1628.985507246377" y="1563.6160714285713"/>
+            <point key="canvasLocation" x="1593" y="1564"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="O6T-vh-fwq">
@@ -362,6 +363,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="luC-b3-H3d"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3nH-qt-MqY">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -377,6 +379,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="AbJ-2X-t3D"/>
+        <segue reference="bmR-cJ-tuw"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="house" catalog="system" width="128" height="110"/>

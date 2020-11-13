@@ -8,12 +8,14 @@
 
 import UIKit
 import AlamofireImage
+import Parse
 
 class CreatePostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var descriptionField: UITextView!
     @IBOutlet weak var postImageView: UIImageView!
+    var userSelectedPostImage: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,34 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func onPostSave(_ sender: Any) {
+        let post = PFObject(className: "Posts")
+        
+        post["title"] = titleField.text!
+        post["description"] = descriptionField.text!
+        
+        let currentUser = PFUser.current()
+        if currentUser != nil {
+            post["author"] = currentUser
+            if(currentUser?["startup"] != nil) {
+                post["startup"] = currentUser?["startup"]
+            }
+        }
+        
+        if(userSelectedPostImage) {
+            let imageData = postImageView.image!.pngData()
+            let file = PFFileObject(data: imageData!)
+            
+            post["image"] = file
+        }
+        
+        post.saveInBackground { (success, error) in
+            if success {
+                // If post creation is correct, segue back to the home page?
+                //self.dismiss(animated: true, completion: nil)
+            } else {
+                print("Error: \(error?.localizedDescription ?? "There was an error posting!")")
+            }
+        }
     }
     
     @IBAction func onCameraLaunch(_ sender: Any) {
@@ -56,6 +86,7 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
         postImageView.image = scaledImage
             
         dismiss(animated: true, completion: nil)
+        userSelectedPostImage = true
     }
     /*
     // MARK: - Navigation
