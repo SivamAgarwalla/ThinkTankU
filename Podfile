@@ -7,6 +7,7 @@ target 'ThinkTankU' do
 
   # Pods for ThinkTankU
   pod 'Parse'
+  pod 'AlamofireImage'
 
   target 'ThinkTankUTests' do
     inherit! :search_paths
