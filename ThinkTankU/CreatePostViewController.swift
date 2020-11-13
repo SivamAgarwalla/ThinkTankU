@@ -51,11 +51,16 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
             let file = PFFileObject(data: imageData!)
             
             post["image"] = file
+            userSelectedPostImage = false
         }
         
         post.saveInBackground { (success, error) in
             if success {
-                // No action required.
+                self.titleField.text = ""
+                self.descriptionField.text = ""
+                let defaultPostImageField = UIImage(systemName: "plus.rectangle")
+                self.postImageView.image = defaultPostImageField
+                self.performSegue(withIdentifier: "onPostSave", sender: nil)
             } else {
                 print("Error: \(error?.localizedDescription ?? "There was an error posting!")")
             }

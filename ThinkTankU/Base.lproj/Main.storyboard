@@ -432,6 +432,7 @@
                         <outlet property="descriptionField" destination="qJN-rM-O1H" id="45j-tA-buI"/>
                         <outlet property="postImageView" destination="jwF-nj-2ju" id="qya-e7-5uf"/>
                         <outlet property="titleField" destination="PHb-k9-Cge" id="ctj-pn-7Xj"/>
+                        <segue destination="sam-Fp-man" kind="show" identifier="onPostSave" id="yVl-lc-aCV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kr8-aq-7EM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -441,7 +442,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1593" y="1564"/>
+            <point key="canvasLocation" x="2009" y="1564"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="O6T-vh-fwq">
@@ -465,7 +466,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="AbJ-2X-t3D"/>
+        <segue reference="yVl-lc-aCV"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="house" catalog="system" width="128" height="110"/>

@@ -57,11 +57,12 @@ class HomeFeedViewController: UIViewController, UITableViewDelegate, UITableView
         cell.postTitle.text = post["title"] as? String
         cell.postDescription.text = post["description"] as? String
         
-        let postImageFile = post["image"] as! PFFileObject
-        let urlString = postImageFile.url!
-        let url = URL(string: urlString)!
-        
-        cell.postImageView.af.setImage(withURL: url)
+        if post["image"] != nil {
+            let postImageFile = post["image"] as! PFFileObject
+            let urlString = postImageFile.url!
+            let url = URL(string: urlString)!
+            cell.postImageView.af.setImage(withURL: url)
+        }
         
         return cell
     }
