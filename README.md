@@ -298,4 +298,4 @@ Note that the other screens listed above will not be shown in the tab, but will 
 ## Video Walkthrough
 ![](login.gif)
 ![](homeandPost.gif)
-![](signUp Gif.gif)
+![](signUp%20Gif.gif)
