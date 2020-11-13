@@ -20,6 +20,7 @@
 		E036ED462557A08B00300EB0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E036ED452557A08B00300EB0 /* LoginViewController.swift */; };
 		E036ED482558A98700300EB0 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E036ED472558A98700300EB0 /* SignupViewController.swift */; };
 		E05604F5255DDAE000C9FDFD /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05604F4255DDAE000C9FDFD /* CreatePostViewController.swift */; };
+		E0AF923D255E1EAC00545F4B /* HomeFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AF923C255E1EAC00545F4B /* HomeFeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		E036ED452557A08B00300EB0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E036ED472558A98700300EB0 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		E05604F4255DDAE000C9FDFD /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
+		E0AF923C255E1EAC00545F4B /* HomeFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				E030D3FB253FD3A800BE507F /* AppDelegate.swift */,
 				E030D3FD253FD3A800BE507F /* SceneDelegate.swift */,
 				E030D401253FD3A800BE507F /* Main.storyboard */,
+				E0AF923C255E1EAC00545F4B /* HomeFeedViewController.swift */,
 				E030D404253FD3B800BE507F /* Assets.xcassets */,
 				E030D406253FD3B800BE507F /* LaunchScreen.storyboard */,
 				E030D409253FD3B800BE507F /* Info.plist */,
@@ -418,6 +421,7 @@
 				E030D3FC253FD3A800BE507F /* AppDelegate.swift in Sources */,
 				E036ED482558A98700300EB0 /* SignupViewController.swift in Sources */,
 				E030D3FE253FD3A800BE507F /* SceneDelegate.swift in Sources */,
+				E0AF923D255E1EAC00545F4B /* HomeFeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

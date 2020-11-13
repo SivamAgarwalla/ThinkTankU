@@ -55,8 +55,7 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
         
         post.saveInBackground { (success, error) in
             if success {
-                // If post creation is correct, segue back to the home page?
-                //self.dismiss(animated: true, completion: nil)
+                // No action required.
             } else {
                 print("Error: \(error?.localizedDescription ?? "There was an error posting!")")
             }
