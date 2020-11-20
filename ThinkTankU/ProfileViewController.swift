@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import AlamofireImage
 
-class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
 
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var nameField: UILabel!
@@ -33,6 +33,18 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             let urlString = userImageFile.url!
             let url = URL(string: urlString)!
             profilePicture.af.setImage(withURL: url)
+        }
+        
+        if currentUser?["userBio"] != nil {
+            userBioField.text = currentUser?["userBio"] as? String
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if(userBioField.text != "Enter a bio!") {
+            let currentUser = PFUser.current()
+            currentUser?["userBio"] = userBioField.text
+            currentUser?.saveInBackground()
         }
     }
     
