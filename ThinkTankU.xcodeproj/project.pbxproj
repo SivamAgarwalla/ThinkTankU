@@ -19,6 +19,7 @@
 		E030D41E253FD3B800BE507F /* ThinkTankUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030D41D253FD3B800BE507F /* ThinkTankUUITests.swift */; };
 		E036ED462557A08B00300EB0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E036ED452557A08B00300EB0 /* LoginViewController.swift */; };
 		E036ED482558A98700300EB0 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E036ED472558A98700300EB0 /* SignupViewController.swift */; };
+		E043258C256783E300603985 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E043258B256783E300603985 /* ProfileViewController.swift */; };
 		E05604F5255DDAE000C9FDFD /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05604F4255DDAE000C9FDFD /* CreatePostViewController.swift */; };
 		E08F43BE255E28F200B93988 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08F43BD255E28F200B93988 /* PostCell.swift */; };
 		E0AF923D255E1EAC00545F4B /* HomeFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AF923C255E1EAC00545F4B /* HomeFeedViewController.swift */; };
@@ -66,6 +67,7 @@
 		E030D41F253FD3B800BE507F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E036ED452557A08B00300EB0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E036ED472558A98700300EB0 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		E043258B256783E300603985 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E05604F4255DDAE000C9FDFD /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		E08F43BD255E28F200B93988 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		E0AF923C255E1EAC00545F4B /* HomeFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				E030D3FB253FD3A800BE507F /* AppDelegate.swift */,
 				E030D3FD253FD3A800BE507F /* SceneDelegate.swift */,
 				E030D401253FD3A800BE507F /* Main.storyboard */,
+				E043258B256783E300603985 /* ProfileViewController.swift */,
 				E0AF923C255E1EAC00545F4B /* HomeFeedViewController.swift */,
 				E030D404253FD3B800BE507F /* Assets.xcassets */,
 				E030D406253FD3B800BE507F /* LaunchScreen.storyboard */,
@@ -425,6 +428,7 @@
 				E030D3FC253FD3A800BE507F /* AppDelegate.swift in Sources */,
 				E036ED482558A98700300EB0 /* SignupViewController.swift in Sources */,
 				E030D3FE253FD3A800BE507F /* SceneDelegate.swift in Sources */,
+				E043258C256783E300603985 /* ProfileViewController.swift in Sources */,
 				E0AF923D255E1EAC00545F4B /* HomeFeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
