@@ -205,6 +205,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="onLikeButton" destination="0wd-OP-7h0" id="GCv-9P-qPa"/>
                                             <outlet property="postDescription" destination="YOE-ko-f1v" id="oUP-xc-blS"/>
                                             <outlet property="postImageView" destination="Fdm-fw-V7c" id="vvk-y7-yap"/>
                                             <outlet property="postTitle" destination="4IX-Gi-5uo" id="PAC-sa-aBe"/>
@@ -594,7 +595,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yVl-lc-aCV"/>
+        <segue reference="AbJ-2X-t3D"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
