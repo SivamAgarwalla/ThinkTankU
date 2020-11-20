@@ -468,20 +468,87 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tfg-IR-pO8">
+                                <rect key="frame" x="132" y="72" width="150" height="150.5"/>
+                                <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="KO5-Jw-O5Z"/>
+                                    <constraint firstAttribute="width" constant="150" id="M2M-r5-r9Z"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="adc-41-fLM"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="mlx-dd-ykV"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="man-xB-4GQ" appends="YES" id="MHo-Hx-HKO"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sivam Agarwalla" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3U-qo-Rli">
+                                <rect key="frame" x="131.5" y="226" width="151" height="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Jose State University" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axs-8e-im1">
+                                <rect key="frame" x="119.5" y="251" width="175" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ThinkTankU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agr-0O-PJe">
+                                <rect key="frame" x="167" y="271" width="80.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter a bio!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3bL-jC-zNp">
+                                <rect key="frame" x="15" y="299" width="384" height="80"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="384" id="5zn-yJ-BdY"/>
+                                    <constraint firstAttribute="height" constant="80" id="rhp-6b-YBa"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="3bL-jC-zNp" firstAttribute="centerX" secondItem="qWb-tv-kdQ" secondAttribute="centerX" id="0wk-uD-KzE"/>
                             <constraint firstItem="D2c-3i-sak" firstAttribute="top" secondItem="jVC-Qp-IlW" secondAttribute="top" id="9fZ-3K-hSl"/>
+                            <constraint firstItem="Axs-8e-im1" firstAttribute="top" secondItem="I3U-qo-Rli" secondAttribute="bottom" constant="2" id="BsN-5d-guO"/>
+                            <constraint firstItem="jVC-Qp-IlW" firstAttribute="trailing" secondItem="3bL-jC-zNp" secondAttribute="trailing" constant="15" id="Jie-Jn-Lr9"/>
+                            <constraint firstItem="3bL-jC-zNp" firstAttribute="top" secondItem="agr-0O-PJe" secondAttribute="bottom" constant="10" id="Tqg-kf-mp8"/>
+                            <constraint firstItem="agr-0O-PJe" firstAttribute="centerX" secondItem="qWb-tv-kdQ" secondAttribute="centerX" id="U0W-B9-u6L"/>
+                            <constraint firstItem="I3U-qo-Rli" firstAttribute="centerX" secondItem="qWb-tv-kdQ" secondAttribute="centerX" id="Z67-FY-LjT"/>
+                            <constraint firstItem="Axs-8e-im1" firstAttribute="centerX" secondItem="qWb-tv-kdQ" secondAttribute="centerX" id="Za5-MQ-g9W"/>
+                            <constraint firstItem="I3U-qo-Rli" firstAttribute="top" secondItem="tfg-IR-pO8" secondAttribute="bottom" constant="5" id="Zc2-HO-lUG"/>
+                            <constraint firstItem="3bL-jC-zNp" firstAttribute="leading" secondItem="jVC-Qp-IlW" secondAttribute="leading" constant="15" id="ajf-dY-GFv"/>
+                            <constraint firstItem="tfg-IR-pO8" firstAttribute="top" secondItem="D2c-3i-sak" secondAttribute="bottom" constant="15" id="hde-cA-21A"/>
                             <constraint firstItem="jVC-Qp-IlW" firstAttribute="trailing" secondItem="D2c-3i-sak" secondAttribute="trailing" id="oaI-Xf-ZC8"/>
+                            <constraint firstItem="tfg-IR-pO8" firstAttribute="centerX" secondItem="qWb-tv-kdQ" secondAttribute="centerX" id="tup-AV-S3B"/>
+                            <constraint firstItem="agr-0O-PJe" firstAttribute="top" secondItem="Axs-8e-im1" secondAttribute="bottom" constant="2" id="yJN-T3-UVb"/>
                             <constraint firstItem="D2c-3i-sak" firstAttribute="leading" secondItem="qWb-tv-kdQ" secondAttribute="leading" id="zdD-xu-Mf7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jVC-Qp-IlW"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.circle" catalog="system" id="WG5-jH-P3Y"/>
+                    <connections>
+                        <outlet property="nameField" destination="I3U-qo-Rli" id="bxl-DL-2PY"/>
+                        <outlet property="profilePicture" destination="tfg-IR-pO8" id="762-Pi-YXk"/>
+                        <outlet property="schoolNameField" destination="Axs-8e-im1" id="Fu0-B0-YY6"/>
+                        <outlet property="startupField" destination="agr-0O-PJe" id="k6N-Qk-sjD"/>
+                        <outlet property="userBioField" destination="3bL-jC-zNp" id="fKZ-9i-KcF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0vW-wo-4dB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="man-xB-4GQ">
+                    <connections>
+                        <action selector="onProfileImageButton:" destination="OZQ-0i-pf9" id="sJS-vw-93U"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2393" y="1570"/>
+            <point key="canvasLocation" x="2392.753623188406" y="1569.6428571428571"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="O6T-vh-fwq">
@@ -506,11 +573,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="m6l-tu-uDY"/>
+        <segue reference="yVl-lc-aCV"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="house" catalog="system" width="128" height="110"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.badge.plus" catalog="system" width="128" height="116"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>

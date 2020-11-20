@@ -8,13 +8,32 @@
 
 import UIKit
 import Parse
+import AlamofireImage
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var nameField: UILabel!
+    @IBOutlet weak var schoolNameField: UILabel!
+    @IBOutlet weak var startupField: UILabel!
+    @IBOutlet weak var userBioField: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.userBioField.layer.borderColor = UIColor.gray.cgColor
+        self.userBioField.layer.borderWidth = 1
+        self.userBioField.layer.cornerRadius = 5
+        
+        let currentUser = PFUser.current()
+        
+        if currentUser?["profileImage"] != nil {
+            let userImageFile = currentUser?["profileImage"] as! PFFileObject
+            let urlString = userImageFile.url!
+            let url = URL(string: urlString)!
+            profilePicture.af.setImage(withURL: url)
+        }
     }
     
     @IBAction func onLogoutButton(_ sender: Any) {
@@ -26,6 +45,38 @@ class ProfileViewController: UIViewController {
         delegate.window?.rootViewController = loginViewController
     }
     
+    @IBAction func onProfileImageButton(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.sourceType = .camera
+        } else {
+            picker.sourceType = .photoLibrary
+        }
+        
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.editedImage] as! UIImage
+        
+        let size = CGSize(width: 151, height: 151)
+        let scaledImage = image.af.imageAspectScaled(toFill: size)
+        
+        profilePicture.image = scaledImage
+        
+        let currentUser = PFUser.current()
+        
+        let imageData = profilePicture.image!.pngData()
+        let file = PFFileObject(data: imageData!)
+        
+        currentUser?["profileImage"] = file
+        currentUser?.saveInBackground()
+        
+        dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
