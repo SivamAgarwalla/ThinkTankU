@@ -26,6 +26,12 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.userBioField.layer.borderWidth = 1
         self.userBioField.layer.cornerRadius = 5
         
+        self.userBioField.delegate = self
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboardByTappingOutside))
+
+        self.view.addGestureRecognizer(tap)
+        
         let currentUser = PFUser.current()
         
         if currentUser?["profileImage"] != nil {
@@ -40,12 +46,22 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
     }
     
+    @objc func hideKeyboardByTappingOutside() {
+        self.view.endEditing(true)
+    }
+    
+    /*
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        self.userBioField.resignFirstResponder()
+        return true;
+    }
+     */
+    
     func textViewDidEndEditing(_ textView: UITextView) {
-        if(userBioField.text != "Enter a bio!") {
-            let currentUser = PFUser.current()
-            currentUser?["userBio"] = userBioField.text
-            currentUser?.saveInBackground()
-        }
+        let currentUser = PFUser.current()
+        currentUser?["userBio"] = userBioField.text
+        currentUser?.saveInBackground()
+        self.userBioField.resignFirstResponder()
     }
     
     @IBAction func onLogoutButton(_ sender: Any) {
