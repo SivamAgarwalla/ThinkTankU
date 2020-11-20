@@ -162,16 +162,36 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wd-OP-7h0">
+                                                    <rect key="frame" x="8" y="420" width="20.5" height="29"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" image="heart" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="onLikeButton:" destination="Tij-AE-YdX" eventType="touchUpInside" id="pPY-Sx-cnp"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNI-7r-4ty">
+                                                    <rect key="frame" x="36.5" y="423" width="23" height="22"/>
+                                                    <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" image="text.bubble" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="onCommentButton:" destination="Tij-AE-YdX" eventType="touchUpInside" id="yIu-PZ-NOa"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="YOE-ko-f1v" firstAttribute="leading" secondItem="bIO-OD-X7q" secondAttribute="leading" constant="10" id="0j3-hc-zdK"/>
                                                 <constraint firstItem="c1N-DU-dBh" firstAttribute="leading" secondItem="aib-11-XUz" secondAttribute="trailing" constant="5" id="2M2-4E-WsU"/>
+                                                <constraint firstItem="0wd-OP-7h0" firstAttribute="top" secondItem="Fdm-fw-V7c" secondAttribute="bottom" constant="7.5" id="3TN-U0-sqk"/>
                                                 <constraint firstItem="YOE-ko-f1v" firstAttribute="top" secondItem="4IX-Gi-5uo" secondAttribute="bottom" constant="3" id="4uN-oY-DiC"/>
                                                 <constraint firstItem="Fdm-fw-V7c" firstAttribute="top" secondItem="YOE-ko-f1v" secondAttribute="bottom" constant="10" id="5dY-f8-dow"/>
                                                 <constraint firstItem="aib-11-XUz" firstAttribute="leading" secondItem="bIO-OD-X7q" secondAttribute="leading" constant="8" id="722-pg-zhQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="4IX-Gi-5uo" secondAttribute="trailing" constant="10" id="9zX-d2-IKD"/>
                                                 <constraint firstItem="4IX-Gi-5uo" firstAttribute="top" secondItem="aib-11-XUz" secondAttribute="bottom" constant="10" id="DfG-vx-5HI"/>
                                                 <constraint firstAttribute="trailing" secondItem="YOE-ko-f1v" secondAttribute="trailing" constant="10" id="K1h-uq-avY"/>
+                                                <constraint firstItem="SNI-7r-4ty" firstAttribute="leading" secondItem="0wd-OP-7h0" secondAttribute="trailing" constant="8" id="NGg-rW-GMj"/>
+                                                <constraint firstItem="SNI-7r-4ty" firstAttribute="top" secondItem="Fdm-fw-V7c" secondAttribute="bottom" constant="10.5" id="Nr8-YL-bDF"/>
                                                 <constraint firstItem="c1N-DU-dBh" firstAttribute="top" secondItem="Rfe-OM-pL6" secondAttribute="bottom" constant="2" id="Sxp-sk-wbh"/>
                                                 <constraint firstItem="4IX-Gi-5uo" firstAttribute="leading" secondItem="bIO-OD-X7q" secondAttribute="leading" constant="10" id="V0E-Fm-Z57"/>
                                                 <constraint firstItem="Rfe-OM-pL6" firstAttribute="leading" secondItem="aib-11-XUz" secondAttribute="trailing" constant="5" id="WeT-MY-Sdk"/>
@@ -179,6 +199,7 @@
                                                 <constraint firstItem="Rfe-OM-pL6" firstAttribute="top" secondItem="bIO-OD-X7q" secondAttribute="topMargin" constant="2" id="hHH-xl-3QI"/>
                                                 <constraint firstItem="Fdm-fw-V7c" firstAttribute="leading" secondItem="bIO-OD-X7q" secondAttribute="leading" id="jGr-QT-dvc"/>
                                                 <constraint firstItem="aib-11-XUz" firstAttribute="top" secondItem="bIO-OD-X7q" secondAttribute="top" constant="8" id="jKy-Bc-1bL"/>
+                                                <constraint firstItem="0wd-OP-7h0" firstAttribute="leading" secondItem="bIO-OD-X7q" secondAttribute="leading" constant="8" id="m1L-jk-SS2"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Fdm-fw-V7c" secondAttribute="bottom" constant="45" id="tEl-B4-yKg"/>
                                                 <constraint firstAttribute="trailing" secondItem="Fdm-fw-V7c" secondAttribute="trailing" id="vri-cW-0wp"/>
                                             </constraints>
@@ -576,6 +597,7 @@
         <segue reference="yVl-lc-aCV"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="house" catalog="system" width="128" height="110"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.badge.plus" catalog="system" width="128" height="116"/>
@@ -583,5 +605,6 @@
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <image name="plus.rectangle" catalog="system" width="128" height="93"/>
+        <image name="text.bubble" catalog="system" width="128" height="110"/>
     </resources>
 </document>

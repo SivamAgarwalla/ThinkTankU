@@ -28,8 +28,15 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
         self.descriptionField.layer.borderColor = UIColor.gray.cgColor
         self.descriptionField.layer.borderWidth = 1
         self.descriptionField.layer.cornerRadius = 5
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboardByTappingOutside))
+        self.view.addGestureRecognizer(tap)
 
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func hideKeyboardByTappingOutside() {
+        self.view.endEditing(true)
     }
     
     @IBAction func onPostSave(_ sender: Any) {

@@ -62,6 +62,9 @@ class HomeFeedViewController: UIViewController, UITableViewDelegate, UITableView
             let urlString = userImageFile.url!
             let url = URL(string: urlString)!
             cell.userImageView.af.setImage(withURL: url)
+        } else {
+            let defaultPostImageField = UIImage(systemName: "person")
+            cell.userImageView.image = defaultPostImageField
         }
         
         if post["image"] != nil {
@@ -74,7 +77,50 @@ class HomeFeedViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
-
+    @IBAction func onLikeButton(_ sender: Any) {
+        let buttonPosition:CGPoint = (sender as AnyObject).convert(CGPoint.zero, to: self.postsTableView)
+        let indexPath = self.postsTableView.indexPathForRow(at: buttonPosition)
+        
+        let post = posts[indexPath!.row]
+        print(indexPath!.row)
+        let currentUser = PFUser.current()
+        let currentUserID = (currentUser?.objectId!)!
+        
+        var postLikes: [String] = []
+        postLikes.append(currentUserID)
+        post.addUniqueObjects(from: postLikes, forKey: "likes")
+        //post["likes"] = postLikes
+        post.saveInBackground { (success: Bool, error: Error?) in
+            if(success) {
+                print("The initial likes array has been printed.")
+            } else {
+                print("Error: \(error?.localizedDescription ?? "There was an error saving likes array.")")
+            }
+        }
+        
+        /*
+        if post["likes"] != nil {
+            let likesSizeBefore = (post["likes"] as AnyObject).count
+            post.addUniqueObject(currentUserID!, forKey: "likes")
+            let likesSizeAfter = (post["likes"] as AnyObject).count
+            
+            if(likesSizeBefore != likesSizeAfter) {
+                // Fill the heart icon on the post
+            } else {
+                // User is unliking the post
+                post.remove(currentUserID!, forKey: "likes")
+            }
+        } else {
+            let likes:[String] = [currentUserID!]
+            post["likes"] = likes
+            post.saveInBackground()
+        }
+        */
+    }
+    
+    @IBAction func onCommentButton(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -85,4 +131,4 @@ class HomeFeedViewController: UIViewController, UITableViewDelegate, UITableView
     }
     */
 
-}
+ }

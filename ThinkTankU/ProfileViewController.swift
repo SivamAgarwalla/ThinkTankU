@@ -29,10 +29,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.userBioField.delegate = self
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboardByTappingOutside))
-
         self.view.addGestureRecognizer(tap)
         
         let currentUser = PFUser.current()
+        
+        self.nameField.text = (currentUser?["firstName"] as! String) + " " + (currentUser?["lastName"] as! String)
+        self.schoolNameField.text = currentUser?["school"] as? String
+        self.startupField.text = currentUser?["startup"] as? String
         
         if currentUser?["profileImage"] != nil {
             let userImageFile = currentUser?["profileImage"] as! PFFileObject
