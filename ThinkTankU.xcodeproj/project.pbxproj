@@ -21,6 +21,7 @@
 		E036ED482558A98700300EB0 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E036ED472558A98700300EB0 /* SignupViewController.swift */; };
 		E043258C256783E300603985 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E043258B256783E300603985 /* ProfileViewController.swift */; };
 		E05604F5255DDAE000C9FDFD /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05604F4255DDAE000C9FDFD /* CreatePostViewController.swift */; };
+		E06A3794256894A200E30888 /* UserPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06A3793256894A200E30888 /* UserPostCell.swift */; };
 		E08F43BE255E28F200B93988 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08F43BD255E28F200B93988 /* PostCell.swift */; };
 		E0AF923D255E1EAC00545F4B /* HomeFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AF923C255E1EAC00545F4B /* HomeFeedViewController.swift */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,7 @@
 		E036ED472558A98700300EB0 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		E043258B256783E300603985 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E05604F4255DDAE000C9FDFD /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
+		E06A3793256894A200E30888 /* UserPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostCell.swift; sourceTree = "<group>"; };
 		E08F43BD255E28F200B93988 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		E0AF923C255E1EAC00545F4B /* HomeFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +163,7 @@
 				E036ED472558A98700300EB0 /* SignupViewController.swift */,
 				E05604F4255DDAE000C9FDFD /* CreatePostViewController.swift */,
 				E08F43BD255E28F200B93988 /* PostCell.swift */,
+				E06A3793256894A200E30888 /* UserPostCell.swift */,
 			);
 			path = ThinkTankU;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E06A3794256894A200E30888 /* UserPostCell.swift in Sources */,
 				E08F43BE255E28F200B93988 /* PostCell.swift in Sources */,
 				E05604F5255DDAE000C9FDFD /* CreatePostViewController.swift in Sources */,
 				E036ED462557A08B00300EB0 /* LoginViewController.swift in Sources */,

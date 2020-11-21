@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import AlamofireImage
 
-class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource  {
 
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var nameField: UILabel!
@@ -20,16 +20,21 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet var postCollectionView: UICollectionView!
     var currentUser: PFUser!
     var currentUserPostCount: Int!
+    var currentUserPosts: [PFObject]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        
         self.postCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         self.postCollectionView.dataSource = self
         self.postCollectionView.delegate = self
+        
+        let layout = postCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        let width = (view.frame.size.width - layout.minimumInteritemSpacing * 2) / 3
+        layout.itemSize = CGSize(width: width, height: width * 3/2)
+        
         
         self.userBioField.layer.borderColor = UIColor.gray.cgColor
         self.userBioField.layer.borderWidth = 1
@@ -42,26 +47,21 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         self.currentUser = PFUser.current()
         let currentUserID = currentUser?["username"]
-        print(currentUserID!)
         
         let query = PFQuery(className: "Posts")
         query.whereKey("authorUsername", equalTo: currentUserID!)
         
         query.findObjectsInBackground { (userPosts: [PFObject]?, error: Error?) in
             if let error = error {
-                // Log details of the failure
                 print(error.localizedDescription)
             } else if let userPosts = userPosts {
-                // The find succeeded.
+                self.currentUserPosts = userPosts
                 self.currentUserPostCount = userPosts.count
-                print("Successfully retrieved \(userPosts.count) posts.")
-                
-                // Do something with the found objects
-                for userPosts in userPosts {
-                    print(userPosts.objectId as Any)
-                }
+                self.postCollectionView.reloadData()
             }
         }
+        
+        // Tell the collection view to reload its data
 
         self.nameField.text = (currentUser?["firstName"] as! String) + " " + (currentUser?["lastName"] as! String)
         self.schoolNameField.text = currentUser?["school"] as? String
@@ -83,13 +83,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @objc func hideKeyboardByTappingOutside() {
         self.view.endEditing(true)
     }
-    
-    /*
-    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
-        self.userBioField.resignFirstResponder()
-        return true;
-    }
-     */
     
     func textViewDidEndEditing(_ textView: UITextView) {
         currentUser?["userBio"] = userBioField.text
@@ -136,6 +129,39 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         dismiss(animated: true, completion: nil)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return currentUserPostCount ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserPostCell", for: indexPath) as! UserPostCell
+        
+        let currentUser = PFUser.current()
+        let currentUserID = currentUser?["username"]
+        
+        let query = PFQuery(className: "Posts")
+        query.whereKey("authorUsername", equalTo: currentUserID!)
+        
+        query.findObjectsInBackground { (userPosts: [PFObject]?, error: Error?) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let userPosts = userPosts {
+                let post = userPosts[indexPath.item]
+                if post["image"] != nil {
+                    let postImageFile = post["image"] as! PFFileObject
+                    let urlString = postImageFile.url!
+                    let url = URL(string: urlString)!
+                    cell.postImageView.af.setImage(withURL: url)
+                }
+            }
+        }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+    }
     /*
     // MARK: - Navigation
 
@@ -146,30 +172,4 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     */
 
-}
-
-extension ProfileViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // Add this line of code to HomeScreen posts as well
-        collectionView.deselectItem(at: indexPath, animated: true)
-        
-    }
-}
-
-extension ProfileViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10;
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.contentView.backgroundColor = .systemPurple
-        return cell
-    }
-    
-    
-}
-
-extension ProfileViewController: UICollectionViewDelegateFlowLayout {
-    
 }
