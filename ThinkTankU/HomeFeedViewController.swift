@@ -92,6 +92,10 @@ class HomeFeedViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.postsTableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     @IBAction func onLikeButton(_ sender: Any) {
         let buttonPosition:CGPoint = (sender as AnyObject).convert(CGPoint.zero, to: self.postsTableView)
         let indexPath = self.postsTableView.indexPathForRow(at: buttonPosition)
