@@ -17,10 +17,19 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var schoolNameField: UILabel!
     @IBOutlet weak var startupField: UILabel!
     @IBOutlet weak var userBioField: UITextView!
-    
+    @IBOutlet var postCollectionView: UICollectionView!
+    var currentUser: PFUser!
+    var currentUserPostCount: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        
+        self.postCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        self.postCollectionView.dataSource = self
+        self.postCollectionView.delegate = self
         
         self.userBioField.layer.borderColor = UIColor.gray.cgColor
         self.userBioField.layer.borderWidth = 1
@@ -31,8 +40,29 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboardByTappingOutside))
         self.view.addGestureRecognizer(tap)
         
-        let currentUser = PFUser.current()
+        self.currentUser = PFUser.current()
+        let currentUserID = currentUser?["username"]
+        print(currentUserID!)
         
+        let query = PFQuery(className: "Posts")
+        query.whereKey("authorUsername", equalTo: currentUserID!)
+        
+        query.findObjectsInBackground { (userPosts: [PFObject]?, error: Error?) in
+            if let error = error {
+                // Log details of the failure
+                print(error.localizedDescription)
+            } else if let userPosts = userPosts {
+                // The find succeeded.
+                self.currentUserPostCount = userPosts.count
+                print("Successfully retrieved \(userPosts.count) posts.")
+                
+                // Do something with the found objects
+                for userPosts in userPosts {
+                    print(userPosts.objectId as Any)
+                }
+            }
+        }
+
         self.nameField.text = (currentUser?["firstName"] as! String) + " " + (currentUser?["lastName"] as! String)
         self.schoolNameField.text = currentUser?["school"] as? String
         self.startupField.text = currentUser?["startup"] as? String
@@ -47,6 +77,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         if currentUser?["userBio"] != nil {
             userBioField.text = currentUser?["userBio"] as? String
         }
+        
     }
     
     @objc func hideKeyboardByTappingOutside() {
@@ -61,7 +92,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
      */
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        let currentUser = PFUser.current()
         currentUser?["userBio"] = userBioField.text
         currentUser?.saveInBackground()
         self.userBioField.resignFirstResponder()
@@ -98,8 +128,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         profilePicture.image = scaledImage
         
-        let currentUser = PFUser.current()
-        
         let imageData = profilePicture.image!.pngData()
         let file = PFFileObject(data: imageData!)
         
@@ -118,4 +146,30 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     */
 
+}
+
+extension ProfileViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // Add this line of code to HomeScreen posts as well
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+    }
+}
+
+extension ProfileViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10;
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        cell.contentView.backgroundColor = .systemPurple
+        return cell
+    }
+    
+    
+}
+
+extension ProfileViewController: UICollectionViewDelegateFlowLayout {
+    
 }

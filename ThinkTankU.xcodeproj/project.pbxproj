@@ -149,10 +149,10 @@
 		E030D3FA253FD3A800BE507F /* ThinkTankU */ = {
 			isa = PBXGroup;
 			children = (
+				E043258B256783E300603985 /* ProfileViewController.swift */,
 				E030D3FB253FD3A800BE507F /* AppDelegate.swift */,
 				E030D3FD253FD3A800BE507F /* SceneDelegate.swift */,
 				E030D401253FD3A800BE507F /* Main.storyboard */,
-				E043258B256783E300603985 /* ProfileViewController.swift */,
 				E0AF923C255E1EAC00545F4B /* HomeFeedViewController.swift */,
 				E030D404253FD3B800BE507F /* Assets.xcassets */,
 				E030D406253FD3B800BE507F /* LaunchScreen.storyboard */,

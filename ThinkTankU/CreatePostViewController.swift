@@ -51,6 +51,7 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
             if(currentUser?["startup"] != nil) {
                 post["startup"] = currentUser?["startup"]
             }
+            post["authorUsername"] = currentUser?["username"]
         }
         
         if(userSelectedPostImage) {
