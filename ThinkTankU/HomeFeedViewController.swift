@@ -135,14 +135,21 @@ class HomeFeedViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func onCommentButton(_ sender: Any) {
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        // Find the selected movie
+        let cell = sender as! UITableViewCell
+        let indexPath = postsTableView.indexPath(for: cell)!
+        let post = posts[indexPath.row]
+        
+        let detailsViewController = segue.destination as! PostDetailsViewController
+        detailsViewController.post = post
+        
+        //Pass the selected movie to the details view controller
     }
-    */
-
  }
