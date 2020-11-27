@@ -25,6 +25,7 @@
 		E08F43BE255E28F200B93988 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08F43BD255E28F200B93988 /* PostCell.swift */; };
 		E0AF923D255E1EAC00545F4B /* HomeFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AF923C255E1EAC00545F4B /* HomeFeedViewController.swift */; };
 		E0B33CCA25704D1C00FD7173 /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B33CC925704D1C00FD7173 /* PostDetailsViewController.swift */; };
+		E0B33CCC2570851200FD7173 /* PostCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B33CCB2570851200FD7173 /* PostCommentCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		E08F43BD255E28F200B93988 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		E0AF923C255E1EAC00545F4B /* HomeFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedViewController.swift; sourceTree = "<group>"; };
 		E0B33CC925704D1C00FD7173 /* PostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
+		E0B33CCB2570851200FD7173 /* PostCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				E030D401253FD3A800BE507F /* Main.storyboard */,
 				E0AF923C255E1EAC00545F4B /* HomeFeedViewController.swift */,
 				E0B33CC925704D1C00FD7173 /* PostDetailsViewController.swift */,
+				E0B33CCB2570851200FD7173 /* PostCommentCell.swift */,
 				E030D404253FD3B800BE507F /* Assets.xcassets */,
 				E030D406253FD3B800BE507F /* LaunchScreen.storyboard */,
 				E030D409253FD3B800BE507F /* Info.plist */,
@@ -436,6 +439,7 @@
 				E036ED482558A98700300EB0 /* SignupViewController.swift in Sources */,
 				E030D3FE253FD3A800BE507F /* SceneDelegate.swift in Sources */,
 				E043258C256783E300603985 /* ProfileViewController.swift in Sources */,
+				E0B33CCC2570851200FD7173 /* PostCommentCell.swift in Sources */,
 				E0AF923D255E1EAC00545F4B /* HomeFeedViewController.swift in Sources */,
 				E0B33CCA25704D1C00FD7173 /* PostDetailsViewController.swift in Sources */,
 			);

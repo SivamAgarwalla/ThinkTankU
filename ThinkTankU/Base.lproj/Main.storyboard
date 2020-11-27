@@ -288,6 +288,15 @@
                                     <action selector="onLikeButton:" destination="Tij-AE-YdX" eventType="touchUpInside" id="wsC-fH-JYg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWz-Qo-s1a">
+                                <rect key="frame" x="62.5" y="469" width="23" height="22"/>
+                                <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="text.bubble" catalog="system"/>
+                                <connections>
+                                    <action selector="onCommentButton:" destination="Tij-AE-YdX" eventType="touchUpInside" id="Cuj-yz-uSl"/>
+                                    <action selector="onCommentButton:" destination="SZP-2T-OTz" eventType="touchUpInside" id="eFl-jZ-RrQ"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVu-go-osv">
                                 <rect key="frame" x="5" y="471.5" width="13" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -300,25 +309,72 @@
                                 <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWz-Qo-s1a">
-                                <rect key="frame" x="62.5" y="469" width="23" height="22"/>
-                                <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="text.bubble" catalog="system"/>
-                                <connections>
-                                    <action selector="onCommentButton:" destination="Tij-AE-YdX" eventType="touchUpInside" id="Cuj-yz-uSl"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZfY-2a-JZf">
+                                <rect key="frame" x="0.0" y="496.5" width="414" height="262.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCommentCell" rowHeight="50" id="bj2-op-2aq" customClass="PostCommentCell" customModule="ThinkTankU" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bj2-op-2aq" id="bPR-cm-yb2">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="icQ-bX-0Ik">
+                                                    <rect key="frame" x="5" y="5.5" width="42" height="39.5"/>
+                                                    <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="42" id="IG1-Jw-kvz"/>
+                                                        <constraint firstAttribute="width" constant="42" id="Qdl-7r-DK0"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sivam_agarwalla" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPQ-t4-wrZ">
+                                                    <rect key="frame" x="51" y="4" width="110" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This will contain the text for the the comment!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfs-ZE-ER7">
+                                                    <rect key="frame" x="51" y="22" width="260.5" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="kfs-ZE-ER7" secondAttribute="bottom" constant="1" id="6RH-CB-rCj"/>
+                                                <constraint firstItem="icQ-bX-0Ik" firstAttribute="top" secondItem="bPR-cm-yb2" secondAttribute="top" constant="4" id="FlV-Ex-rf3"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="kfs-ZE-ER7" secondAttribute="trailing" constant="5" id="Fmj-En-hQR"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="icQ-bX-0Ik" secondAttribute="bottom" constant="4" id="GnZ-rb-Qj1"/>
+                                                <constraint firstItem="kfs-ZE-ER7" firstAttribute="leading" secondItem="icQ-bX-0Ik" secondAttribute="trailing" constant="4" id="L5V-cl-A5S"/>
+                                                <constraint firstItem="bPQ-t4-wrZ" firstAttribute="top" secondItem="bPR-cm-yb2" secondAttribute="top" constant="4" id="MYc-8P-1z3"/>
+                                                <constraint firstItem="icQ-bX-0Ik" firstAttribute="leading" secondItem="bPR-cm-yb2" secondAttribute="leading" constant="5" id="OKy-QI-ZPP"/>
+                                                <constraint firstItem="kfs-ZE-ER7" firstAttribute="top" secondItem="bPQ-t4-wrZ" secondAttribute="bottom" constant="1" id="TjY-zm-Rzu"/>
+                                                <constraint firstItem="bPQ-t4-wrZ" firstAttribute="leading" secondItem="icQ-bX-0Ik" secondAttribute="trailing" constant="4" id="e0A-v4-7vO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentTextLabel" destination="kfs-ZE-ER7" id="iVm-DK-zRP"/>
+                                            <outlet property="userProfileImageView" destination="icQ-bX-0Ik" id="Iml-Qa-XlZ"/>
+                                            <outlet property="usernameLabel" destination="bPQ-t4-wrZ" id="PpR-Ed-C5P"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="eyd-do-W6n" firstAttribute="top" secondItem="fmw-dv-bbo" secondAttribute="top" constant="8" id="1eL-ut-6rS"/>
                             <constraint firstItem="fOG-WQ-wCc" firstAttribute="top" secondItem="ZJh-aR-hgh" secondAttribute="bottom" constant="10" id="2Uu-W7-pL2"/>
+                            <constraint firstItem="fmw-dv-bbo" firstAttribute="trailing" secondItem="ZfY-2a-JZf" secondAttribute="trailing" id="3CB-ob-xPZ"/>
+                            <constraint firstItem="fmw-dv-bbo" firstAttribute="bottom" secondItem="ZfY-2a-JZf" secondAttribute="bottom" id="5hD-J9-1a4"/>
                             <constraint firstItem="zcN-vP-saH" firstAttribute="top" secondItem="MIO-aZ-zh3" secondAttribute="bottom" constant="2" id="7DE-rm-0ro"/>
                             <constraint firstItem="zcN-vP-saH" firstAttribute="leading" secondItem="eyd-do-W6n" secondAttribute="trailing" constant="5" id="Dtl-0L-BGA"/>
                             <constraint firstItem="MIO-aZ-zh3" firstAttribute="leading" secondItem="eyd-do-W6n" secondAttribute="trailing" constant="5" id="Hum-eE-bbt"/>
                             <constraint firstItem="Cmo-DP-lde" firstAttribute="top" secondItem="fOG-WQ-wCc" secondAttribute="bottom" constant="-3" id="RFW-oB-wKs"/>
                             <constraint firstItem="fmw-dv-bbo" firstAttribute="trailing" secondItem="fOG-WQ-wCc" secondAttribute="trailing" id="Smg-yZ-Mgb"/>
                             <constraint firstItem="ZJh-aR-hgh" firstAttribute="leading" secondItem="fmw-dv-bbo" secondAttribute="leading" constant="10" id="SnO-DE-1LA"/>
+                            <constraint firstItem="ZfY-2a-JZf" firstAttribute="leading" secondItem="fmw-dv-bbo" secondAttribute="leading" id="TBT-u3-dSW"/>
                             <constraint firstItem="Cmo-DP-lde" firstAttribute="leading" secondItem="IVu-go-osv" secondAttribute="trailing" constant="1" id="TU3-u9-4YU"/>
                             <constraint firstItem="UFB-EY-Bzf" firstAttribute="leading" secondItem="Cmo-DP-lde" secondAttribute="trailing" constant="13" id="Vag-Bw-fGO"/>
                             <constraint firstItem="sWz-Qo-s1a" firstAttribute="top" secondItem="fOG-WQ-wCc" secondAttribute="bottom" constant="0.5" id="a7H-LZ-yJK"/>
@@ -331,6 +387,7 @@
                             <constraint firstItem="eyd-do-W6n" firstAttribute="leading" secondItem="fmw-dv-bbo" secondAttribute="leading" constant="8" id="ixS-Mv-piF"/>
                             <constraint firstItem="MIO-aZ-zh3" firstAttribute="top" secondItem="fmw-dv-bbo" secondAttribute="top" constant="10" id="lpI-lx-fO2"/>
                             <constraint firstItem="S1G-y5-yFh" firstAttribute="top" secondItem="eyd-do-W6n" secondAttribute="bottom" constant="10" id="mSd-8f-mdo"/>
+                            <constraint firstItem="ZfY-2a-JZf" firstAttribute="top" secondItem="Cmo-DP-lde" secondAttribute="bottom" constant="2" id="tjc-OX-eNe"/>
                             <constraint firstItem="IVu-go-osv" firstAttribute="top" secondItem="fOG-WQ-wCc" secondAttribute="bottom" constant="3" id="xhl-EN-yPY"/>
                             <constraint firstItem="ZJh-aR-hgh" firstAttribute="top" secondItem="S1G-y5-yFh" secondAttribute="bottom" constant="3" id="yhk-Z9-mqr"/>
                         </constraints>
@@ -340,6 +397,7 @@
                     <connections>
                         <outlet property="commentCountLabel" destination="UFB-EY-Bzf" id="gVx-i2-fuo"/>
                         <outlet property="commentImageButton" destination="sWz-Qo-s1a" id="l6O-Kv-GbW"/>
+                        <outlet property="commentsTableView" destination="ZfY-2a-JZf" id="Rvc-Sp-A0Z"/>
                         <outlet property="likeCountLabel" destination="IVu-go-osv" id="fDS-LN-mNF"/>
                         <outlet property="likeImageButton" destination="Cmo-DP-lde" id="ulw-7p-vHQ"/>
                         <outlet property="postDescriptionLabel" destination="ZJh-aR-hgh" id="7dj-e5-fE9"/>
@@ -352,7 +410,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qcO-QJ-dpe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="623" y="3056"/>
+            <point key="canvasLocation" x="621.73913043478262" y="3055.5803571428569"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="LZp-xS-sFx">

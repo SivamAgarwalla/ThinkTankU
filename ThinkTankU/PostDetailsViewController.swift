@@ -10,8 +10,7 @@ import UIKit
 import Parse
 import AlamofireImage
 
-class PostDetailsViewController: UIViewController {
-    
+class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var post: PFObject!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var startupLabel: UILabel!
@@ -23,9 +22,14 @@ class PostDetailsViewController: UIViewController {
     @IBOutlet weak var likeImageButton: UIButton!
     @IBOutlet weak var commentImageButton: UIButton!
     @IBOutlet weak var userProfileImageView: UIImageView!
+    @IBOutlet weak var commentsTableView: UITableView!
+    var comments = [PFObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        commentsTableView.delegate = self
+        commentsTableView.dataSource = self
         
         let postUser = post["author"] as! PFUser
         usernameLabel.text = post["authorUsername"] as? String
@@ -71,6 +75,17 @@ class PostDetailsViewController: UIViewController {
         } else {
             self.likeCountLabel.text = "0"
         }
+        
+        if self.post["comments"] != nil {
+            self.comments = self.post["comments"] as! [PFObject]
+            print(self.comments)
+            let numberOfComments = self.comments.count
+            self.commentCountLabel.text = "\(numberOfComments )"
+            self.commentsTableView.reloadData()
+        } else {
+            self.commentCountLabel.text = "0"
+            self.commentsTableView.reloadData()
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -106,6 +121,54 @@ class PostDetailsViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func onCommentButton(_ sender: Any) {
+        let comment = PFObject(className: "Comments")
+        let currentUser = PFUser.current()!
+        comment["author"] = currentUser
+        comment["commentText"] = "This is a comment to test functionality! I wonder what happens to this comment when it starts to span two lines."
+        comment["post"] = post
+        comment["authorUsername"] = currentUser["username"]
+        comment["authorImage"] = currentUser["profileImage"]
+        
+        self.post.add(comment, forKey: "comments")
+        
+        self.post.saveInBackground { (success, error) in
+            if success {
+                print("Comment Saved")
+                let comments = (self.post["comments"] as? [PFObject]) ?? []
+                let numberOfComments = comments.count
+                self.commentCountLabel.text = "\(numberOfComments )"
+                self.commentsTableView.reloadData()
+            }
+            else {
+                print("Error: \(error?.localizedDescription ?? "There was an error saving the comment.")")
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let comments = (self.post["comments"] as? [PFObject]) ?? []
+        print(comments.count)
+        return comments.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.commentsTableView.dequeueReusableCell(withIdentifier: "PostCommentCell") as! PostCommentCell
+        let comments = (self.post["comments"] as? [PFObject]) ?? []
+        if(comments.count != 0) {
+            let comment = comments[indexPath.row]
+            cell.usernameLabel.text = comment["authorUsername"] as? String
+            cell.commentTextLabel.text = comment["commentText"] as? String
+            
+            let commentImageFile = comment["authorImage"] as! PFFileObject
+            let urlString = commentImageFile.url!
+            let url = URL(string: urlString)!
+            cell.userProfileImageView.af.setImage(withURL: url)
+        }
+        return cell
+    }
+    
 
     /*
     // MARK: - Navigation

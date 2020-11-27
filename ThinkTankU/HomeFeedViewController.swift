@@ -29,7 +29,7 @@ class HomeFeedViewController: UIViewController, UITableViewDelegate, UITableView
         
         let query = PFQuery(className: "Posts")
         query.order(byDescending: "createdAt")
-        query.includeKey("author")
+        query.includeKeys(["author", "comments"])
         
         query.findObjectsInBackground { (posts, error) in
             if posts != nil {
