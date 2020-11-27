@@ -33,7 +33,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         layout.minimumLineSpacing = 1
         layout.minimumInteritemSpacing = 1
         let width = (view.frame.size.width - layout.minimumInteritemSpacing * 2) / 3
-        layout.itemSize = CGSize(width: width, height: width * 1.1)
+        layout.itemSize = CGSize(width: width, height: width)
         
         
         self.userBioField.layer.borderColor = UIColor.gray.cgColor
@@ -50,6 +50,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         let query = PFQuery(className: "Posts")
         query.whereKey("authorUsername", equalTo: currentUserID!)
+        query.includeKeys(["author", "comments"])
         
         query.findObjectsInBackground { (userPosts: [PFObject]?, error: Error?) in
             if let error = error {

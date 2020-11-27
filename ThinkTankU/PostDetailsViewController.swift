@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import AlamofireImage
+import MessageInputBar
 
 class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var post: PFObject!
@@ -24,10 +25,10 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var userProfileImageView: UIImageView!
     @IBOutlet weak var commentsTableView: UITableView!
     var comments = [PFObject]()
+    let commentBar = MessageInputBar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         commentsTableView.delegate = self
         commentsTableView.dataSource = self
         
@@ -88,6 +89,14 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         }
 
         // Do any additional setup after loading the view.
+    }
+    
+    override var inputAccessoryView: UIView? {
+        return commentBar
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        return true
     }
     
     
