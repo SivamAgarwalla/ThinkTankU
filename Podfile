@@ -9,6 +9,7 @@ target 'ThinkTankU' do
   pod 'Parse'
   pod 'AlamofireImage'
   pod 'MessageInputBar'
+  pod 'SwiftyJSON'
 
   target 'ThinkTankUTests' do
     inherit! :search_paths

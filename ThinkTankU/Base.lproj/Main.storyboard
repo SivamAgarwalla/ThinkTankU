@@ -790,6 +790,94 @@
             </objects>
             <point key="canvasLocation" x="2392.753623188406" y="1569.6428571428571"/>
         </scene>
+        <!--Sentiment-->
+        <scene sceneID="EwK-il-IPh">
+            <objects>
+                <viewController wantsFullScreenLayout="YES" modalPresentationStyle="fullScreen" id="iOh-5P-pFF" customClass="SentimentAnalysisViewController" customModule="ThinkTankU" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BGB-cR-69R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5z9-SF-waS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Sentiment Analysis" id="cmw-kg-UMH"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn how others are feeling about a topic..." textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fH6-R7-sUb">
+                                <rect key="frame" x="30" y="156" width="354" height="74"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="31"/>
+                                <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type in a Twitter handle to see general sentiment regarding a certain topic (Ex. @Apple)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqG-6n-Nfm">
+                                <rect key="frame" x="40" y="245" width="334" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter handle..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rbK-a3-6Ps">
+                                <rect key="frame" x="50" y="311" width="314" height="34"/>
+                                <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AgX-2H-NCa">
+                                <rect key="frame" x="165" y="365" width="84" height="36"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Analyze">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onAnalyze:" destination="iOh-5P-pFF" eventType="touchUpInside" id="IiD-Z4-oi3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SENTIMENT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rx-EE-IJs">
+                                <rect key="frame" x="152" y="439" width="110" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rbK-a3-6Ps" firstAttribute="centerX" secondItem="BGB-cR-69R" secondAttribute="centerX" id="4nS-9v-qRg"/>
+                            <constraint firstItem="AgX-2H-NCa" firstAttribute="top" secondItem="rbK-a3-6Ps" secondAttribute="bottom" constant="20" id="A5l-cE-4c4"/>
+                            <constraint firstItem="rbK-a3-6Ps" firstAttribute="top" secondItem="hqG-6n-Nfm" secondAttribute="bottom" constant="30" id="IBm-vl-G3O"/>
+                            <constraint firstItem="hqG-6n-Nfm" firstAttribute="top" secondItem="fH6-R7-sUb" secondAttribute="bottom" constant="15" id="Oml-OH-UEL"/>
+                            <constraint firstItem="AgX-2H-NCa" firstAttribute="leading" secondItem="MTB-L4-v8w" secondAttribute="leading" constant="165" id="Pu5-LV-HmD"/>
+                            <constraint firstItem="MTB-L4-v8w" firstAttribute="trailing" secondItem="AgX-2H-NCa" secondAttribute="trailing" constant="165" id="QQs-rc-DKx"/>
+                            <constraint firstItem="MTB-L4-v8w" firstAttribute="trailing" secondItem="hqG-6n-Nfm" secondAttribute="trailing" constant="40" id="Y1y-r8-6kb"/>
+                            <constraint firstItem="5z9-SF-waS" firstAttribute="top" secondItem="MTB-L4-v8w" secondAttribute="top" id="c5l-PI-kZw"/>
+                            <constraint firstItem="5z9-SF-waS" firstAttribute="leading" secondItem="BGB-cR-69R" secondAttribute="leading" id="dRr-Wl-2Zo"/>
+                            <constraint firstItem="hqG-6n-Nfm" firstAttribute="leading" secondItem="MTB-L4-v8w" secondAttribute="leading" constant="40" id="fP1-x0-8BU"/>
+                            <constraint firstItem="fH6-R7-sUb" firstAttribute="top" secondItem="5z9-SF-waS" secondAttribute="bottom" constant="100" id="hS2-KF-Q38"/>
+                            <constraint firstItem="AgX-2H-NCa" firstAttribute="centerX" secondItem="BGB-cR-69R" secondAttribute="centerX" id="mDv-EB-MHJ"/>
+                            <constraint firstItem="rbK-a3-6Ps" firstAttribute="leading" secondItem="MTB-L4-v8w" secondAttribute="leading" constant="50" id="mYC-nl-LLC"/>
+                            <constraint firstItem="MTB-L4-v8w" firstAttribute="trailing" secondItem="rbK-a3-6Ps" secondAttribute="trailing" constant="50" id="omz-H8-2lS"/>
+                            <constraint firstItem="fH6-R7-sUb" firstAttribute="leading" secondItem="BGB-cR-69R" secondAttribute="leading" constant="30" id="rPS-H3-DW0"/>
+                            <constraint firstItem="MTB-L4-v8w" firstAttribute="trailing" secondItem="5z9-SF-waS" secondAttribute="trailing" id="utp-5A-TyE"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fH6-R7-sUb" secondAttribute="trailing" id="w5a-sQ-R4Y"/>
+                            <constraint firstItem="fH6-R7-sUb" firstAttribute="centerX" secondItem="BGB-cR-69R" secondAttribute="centerX" id="zdd-Qe-252"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MTB-L4-v8w"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Sentiment" image="bolt.fill" catalog="system" id="nMZ-Ev-oOG"/>
+                    <connections>
+                        <outlet property="handleTextField" destination="rbK-a3-6Ps" id="y1N-4w-zg5"/>
+                        <outlet property="sentimentLabel" destination="1rx-EE-IJs" id="Kdx-PH-SvW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GPo-sm-cJw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3312" y="1570"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="O6T-vh-fwq">
             <objects>
@@ -805,6 +893,7 @@
                         <segue destination="yhV-tJ-JkY" kind="relationship" relationship="viewControllers" id="PTo-GY-AQJ"/>
                         <segue destination="x8X-yb-kIv" kind="relationship" relationship="viewControllers" id="let-Zz-olc"/>
                         <segue destination="OZQ-0i-pf9" kind="relationship" relationship="viewControllers" id="HKr-Ag-T2r"/>
+                        <segue destination="iOh-5P-pFF" kind="relationship" relationship="viewControllers" id="lYx-ve-jRA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Jv-Qi-BX1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -813,9 +902,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yVl-lc-aCV"/>
+        <segue reference="AbJ-2X-t3D"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="bolt.fill" catalog="system" width="101" height="128"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="house" catalog="system" width="128" height="110"/>
         <image name="person" catalog="system" width="128" height="117"/>

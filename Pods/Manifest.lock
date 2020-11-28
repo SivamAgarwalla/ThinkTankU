@@ -10,11 +10,13 @@ PODS:
     - Parse/Core (= 1.19.0)
   - Parse/Core (1.19.0):
     - Bolts/Tasks (= 1.9.1)
+  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - AlamofireImage
   - MessageInputBar
   - Parse
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
@@ -23,6 +25,7 @@ SPEC REPOS:
     - Bolts
     - MessageInputBar
     - Parse
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
@@ -30,7 +33,8 @@ SPEC CHECKSUMS:
   Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
   MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
   Parse: 0fb5c7cc7ee5900f2434e24607d0496155b8d04f
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: c9de2e7c7aa1977a03832006f769cacca45cb1e1
+PODFILE CHECKSUM: 2d880c03d1061b077e00178b20231375b7b0efa7
 
 COCOAPODS: 1.9.3
