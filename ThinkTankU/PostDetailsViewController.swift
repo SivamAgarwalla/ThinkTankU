@@ -79,7 +79,6 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         if self.post["comments"] != nil {
             self.comments = self.post["comments"] as! [PFObject]
-            print(self.comments)
             let numberOfComments = self.comments.count
             self.commentCountLabel.text = "\(numberOfComments )"
             self.commentsTableView.reloadData()
@@ -144,7 +143,6 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         self.post.saveInBackground { (success, error) in
             if success {
-                print("Comment Saved")
                 let comments = (self.post["comments"] as? [PFObject]) ?? []
                 let numberOfComments = comments.count
                 self.commentCountLabel.text = "\(numberOfComments )"
@@ -158,7 +156,6 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let comments = (self.post["comments"] as? [PFObject]) ?? []
-        print(comments.count)
         return comments.count
     }
     
