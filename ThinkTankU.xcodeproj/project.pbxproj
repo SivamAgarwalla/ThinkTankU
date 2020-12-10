@@ -20,10 +20,10 @@
 		E036ED462557A08B00300EB0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E036ED452557A08B00300EB0 /* LoginViewController.swift */; };
 		E036ED482558A98700300EB0 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E036ED472558A98700300EB0 /* SignupViewController.swift */; };
 		E043258C256783E300603985 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E043258B256783E300603985 /* ProfileViewController.swift */; };
+		E0543A072573147200000414 /* TweetSentimentClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E0543A012573147200000414 /* TweetSentimentClassifier.mlmodel */; };
 		E05604F5255DDAE000C9FDFD /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05604F4255DDAE000C9FDFD /* CreatePostViewController.swift */; };
 		E06A3794256894A200E30888 /* UserPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06A3793256894A200E30888 /* UserPostCell.swift */; };
 		E08F43BE255E28F200B93988 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08F43BD255E28F200B93988 /* PostCell.swift */; };
-		E0A0F54425720C570099A8C9 /* TweetSentimentClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E0A0F54325720C560099A8C9 /* TweetSentimentClassifier.mlmodel */; };
 		E0A0F557257219550099A8C9 /* SwifteriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A0F54E2572190C0099A8C9 /* SwifteriOS.framework */; };
 		E0A0F558257219550099A8C9 /* SwifteriOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E0A0F54E2572190C0099A8C9 /* SwifteriOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E0A0F55B25722E530099A8C9 /* SentimentAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A0F55A25722E530099A8C9 /* SentimentAnalysisViewController.swift */; };
@@ -124,10 +124,10 @@
 		E036ED452557A08B00300EB0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E036ED472558A98700300EB0 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		E043258B256783E300603985 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E0543A012573147200000414 /* TweetSentimentClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = TweetSentimentClassifier.mlmodel; path = ../../TweetSentimentClassifier.mlmodel; sourceTree = "<group>"; };
 		E05604F4255DDAE000C9FDFD /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		E06A3793256894A200E30888 /* UserPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostCell.swift; sourceTree = "<group>"; };
 		E08F43BD255E28F200B93988 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
-		E0A0F54325720C560099A8C9 /* TweetSentimentClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TweetSentimentClassifier.mlmodel; sourceTree = "<group>"; };
 		E0A0F5452572190C0099A8C9 /* Swifter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Swifter.xcodeproj; path = ../Swifter/Swifter.xcodeproj; sourceTree = "<group>"; };
 		E0A0F55A25722E530099A8C9 /* SentimentAnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentAnalysisViewController.swift; sourceTree = "<group>"; };
 		E0AF923C255E1EAC00545F4B /* HomeFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedViewController.swift; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 				E05604F4255DDAE000C9FDFD /* CreatePostViewController.swift */,
 				E08F43BD255E28F200B93988 /* PostCell.swift */,
 				E06A3793256894A200E30888 /* UserPostCell.swift */,
-				E0A0F54325720C560099A8C9 /* TweetSentimentClassifier.mlmodel */,
+				E0543A012573147200000414 /* TweetSentimentClassifier.mlmodel */,
 				E0A0F55A25722E530099A8C9 /* SentimentAnalysisViewController.swift */,
 			);
 			path = ThinkTankU;
@@ -555,9 +555,9 @@
 				E036ED462557A08B00300EB0 /* LoginViewController.swift in Sources */,
 				E030D3FC253FD3A800BE507F /* AppDelegate.swift in Sources */,
 				E036ED482558A98700300EB0 /* SignupViewController.swift in Sources */,
-				E0A0F54425720C570099A8C9 /* TweetSentimentClassifier.mlmodel in Sources */,
 				E030D3FE253FD3A800BE507F /* SceneDelegate.swift in Sources */,
 				E043258C256783E300603985 /* ProfileViewController.swift in Sources */,
+				E0543A072573147200000414 /* TweetSentimentClassifier.mlmodel in Sources */,
 				E0B33CCC2570851200FD7173 /* PostCommentCell.swift in Sources */,
 				E0AF923D255E1EAC00545F4B /* HomeFeedViewController.swift in Sources */,
 				E0B33CCA25704D1C00FD7173 /* PostDetailsViewController.swift in Sources */,

@@ -21,26 +21,38 @@ class SentimentAnalysisViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        swifter.searchTweet(using: "@Apple", lang: "en", count: 50, tweetMode: .extended,  success: { (tweetResults, searchMetadata) in
-            
-            if let tweet = tweetResults[0]["full_text"].string {
-                print(tweet)
-            }
-            
-        }) { (error) in
-            print("There was an error with the Twitter API, \(error)")
-        }
     }
     
 
     @IBAction func onAnalyze(_ sender: UIButton) {
-        swifter.searchTweet(using: "@Apple", lang: "en", count: 1000, tweetMode: .extended,  success: { (tweetResults, searchMetadata) in
-            
-            if let tweet = tweetResults[0]["full_text"].string {
-                print(tweet)
+        var tweetsFullText = [TweetSentimentClassifierInput]()
+        
+        let predictionText = self.handleTextField.text!
+        swifter.searchTweet(using: predictionText, lang: "en", count: 100, tweetMode: .extended,  success: { (tweetResults, searchMetadata) in
+            for c in 0..<100 {
+                if tweetResults[c]["retweet_count"].integer ?? 0 > 0 {
+                    if let tweet = tweetResults[c]["retweeted_status"]["full_text"].string {
+                        let tweetForClassification = TweetSentimentClassifierInput(text: tweet)
+                        tweetsFullText.append(tweetForClassification)
+                    }
+                } else {
+                     if let tweet = tweetResults[c]["full_text"].string {
+                        let tweetForClassification = TweetSentimentClassifierInput(text: tweet)
+                        tweetsFullText.append(tweetForClassification)
+                    }
+                }
             }
-            
+    
+            do {
+                let tweetPredictions = try self.sentimentClassifier.predictions(inputs: tweetsFullText)
+                
+                for c in 0..<tweetsFullText.count {
+                    print(tweetsFullText[c].text)
+                    print(tweetPredictions[c].label + "\n\n")
+                }
+            } catch {
+                print("There was an error with the sentiment analysis.")
+            }
         }) { (error) in
             print("There was an error with the Twitter API, \(error)")
         }
@@ -54,5 +66,4 @@ class SentimentAnalysisViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
