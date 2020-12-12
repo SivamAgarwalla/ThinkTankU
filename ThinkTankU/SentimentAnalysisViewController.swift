@@ -46,10 +46,29 @@ class SentimentAnalysisViewController: UIViewController {
             do {
                 let tweetPredictions = try self.sentimentClassifier.predictions(inputs: tweetsFullText)
                 
+                var sentimentScore = 0
+                
                 for c in 0..<tweetsFullText.count {
-                    print(tweetsFullText[c].text)
+                    //print(tweetsFullText[c].text)
                     print(tweetPredictions[c].label + "\n\n")
+                    
+                    if tweetPredictions[c].label == "Positive" {
+                        sentimentScore += 1
+                    }
+                    if tweetPredictions[c].label == "Negative" {
+                        sentimentScore -= 1
+                    }
                 }
+                
+                
+                if sentimentScore > 10 {
+                    self.sentimentLabel.text = "Positive"
+                } else if sentimentScore < -10 {
+                    self.sentimentLabel.text = "Negative"
+                } else {
+                    self.sentimentLabel.text = "Neutral"
+                }
+                
             } catch {
                 print("There was an error with the sentiment analysis.")
             }

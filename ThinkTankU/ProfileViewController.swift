@@ -142,6 +142,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let currentUserID = currentUser?["username"]
         
         let query = PFQuery(className: "Posts")
+        query.order(byDescending: "createdAt")
         query.whereKey("authorUsername", equalTo: currentUserID!)
         
         query.findObjectsInBackground { (userPosts: [PFObject]?, error: Error?) in

@@ -837,10 +837,9 @@
                                     <action selector="onAnalyze:" destination="iOh-5P-pFF" eventType="touchUpInside" id="IiD-Z4-oi3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SENTIMENT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rx-EE-IJs">
-                                <rect key="frame" x="152" y="439" width="110" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SENTIMENT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rx-EE-IJs">
+                                <rect key="frame" x="134.5" y="436" width="145.5" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
                                 <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -848,10 +847,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="rbK-a3-6Ps" firstAttribute="centerX" secondItem="BGB-cR-69R" secondAttribute="centerX" id="4nS-9v-qRg"/>
+                            <constraint firstItem="1rx-EE-IJs" firstAttribute="centerX" secondItem="BGB-cR-69R" secondAttribute="centerX" id="9po-69-1f4"/>
                             <constraint firstItem="AgX-2H-NCa" firstAttribute="top" secondItem="rbK-a3-6Ps" secondAttribute="bottom" constant="20" id="A5l-cE-4c4"/>
                             <constraint firstItem="rbK-a3-6Ps" firstAttribute="top" secondItem="hqG-6n-Nfm" secondAttribute="bottom" constant="30" id="IBm-vl-G3O"/>
                             <constraint firstItem="hqG-6n-Nfm" firstAttribute="top" secondItem="fH6-R7-sUb" secondAttribute="bottom" constant="15" id="Oml-OH-UEL"/>
                             <constraint firstItem="AgX-2H-NCa" firstAttribute="leading" secondItem="MTB-L4-v8w" secondAttribute="leading" constant="165" id="Pu5-LV-HmD"/>
+                            <constraint firstItem="1rx-EE-IJs" firstAttribute="top" secondItem="AgX-2H-NCa" secondAttribute="bottom" constant="35" id="QH7-BA-x29"/>
                             <constraint firstItem="MTB-L4-v8w" firstAttribute="trailing" secondItem="AgX-2H-NCa" secondAttribute="trailing" constant="165" id="QQs-rc-DKx"/>
                             <constraint firstItem="MTB-L4-v8w" firstAttribute="trailing" secondItem="hqG-6n-Nfm" secondAttribute="trailing" constant="40" id="Y1y-r8-6kb"/>
                             <constraint firstItem="5z9-SF-waS" firstAttribute="top" secondItem="MTB-L4-v8w" secondAttribute="top" id="c5l-PI-kZw"/>

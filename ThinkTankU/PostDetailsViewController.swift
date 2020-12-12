@@ -33,7 +33,7 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         commentsTableView.delegate = self
         commentsTableView.dataSource = self
         
-        commentBar.inputTextView.placeholder = "Add a comment... "
+        commentBar.inputTextView.placeholder = "Add a comment..."
         commentBar.sendButton.title = "Post"
         commentBar.delegate = self
         
