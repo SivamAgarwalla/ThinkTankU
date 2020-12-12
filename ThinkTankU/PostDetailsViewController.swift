@@ -11,7 +11,7 @@ import Parse
 import AlamofireImage
 import MessageInputBar
 
-class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MessageInputBarDelegate {
     var post: PFObject!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var startupLabel: UILabel!
@@ -26,11 +26,24 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var commentsTableView: UITableView!
     var comments = [PFObject]()
     let commentBar = MessageInputBar()
+    var showsCommentBar = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         commentsTableView.delegate = self
         commentsTableView.dataSource = self
+        
+        commentBar.inputTextView.placeholder = "Add a comment... "
+        commentBar.sendButton.title = "Post"
+        commentBar.delegate = self
+        
+        commentsTableView.keyboardDismissMode = .interactive
+
+        let center = NotificationCenter.default
+        center.addObserver(self, selector: #selector(keyboardWillBeHidden(note:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboardByTappingOutside))
+        self.view.addGestureRecognizer(tap)
         
         let postUser = post["author"] as! PFUser
         usernameLabel.text = post["authorUsername"] as? String
@@ -86,8 +99,49 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             self.commentCountLabel.text = "0"
             self.commentsTableView.reloadData()
         }
+    }
+    
+    @objc func hideKeyboardByTappingOutside() {
+        showsCommentBar = false
+        becomeFirstResponder()
+        commentBar.inputTextView.resignFirstResponder()
+    }
+    
+    func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
+        let comment = PFObject(className: "Comments")
+        let currentUser = PFUser.current()!
+        comment["author"] = currentUser
+        comment["commentText"] = text
+        comment["post"] = post
+        comment["authorUsername"] = currentUser["username"]
+        comment["authorImage"] = currentUser["profileImage"]
 
-        // Do any additional setup after loading the view.
+        self.post.add(comment, forKey: "comments")
+
+        self.post.saveInBackground { (success, error) in
+            if success {
+                let comments = (self.post["comments"] as? [PFObject]) ?? []
+                let numberOfComments = comments.count
+                self.commentCountLabel.text = "\(numberOfComments )"
+                self.commentsTableView.reloadData()
+            }
+            else {
+                print("Error: \(error?.localizedDescription ?? "There was an error saving the comment.")")
+            }
+        }
+        
+        commentsTableView.reloadData()
+        
+        commentBar.inputTextView.text = nil
+        showsCommentBar = false
+        becomeFirstResponder()
+        commentBar.inputTextView.resignFirstResponder()
+    }
+    
+    @objc func keyboardWillBeHidden(note: Notification) {
+        commentBar.inputTextView.text = nil
+        showsCommentBar = false
+        becomeFirstResponder()
     }
     
     override var inputAccessoryView: UIView? {
@@ -95,7 +149,7 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     override var canBecomeFirstResponder: Bool {
-        return true
+        return showsCommentBar
     }
     
     
@@ -131,27 +185,9 @@ class PostDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func onCommentButton(_ sender: Any) {
-        let comment = PFObject(className: "Comments")
-        let currentUser = PFUser.current()!
-        comment["author"] = currentUser
-        comment["commentText"] = "This is a comment to test functionality! I wonder what happens to this comment when it starts to span two lines."
-        comment["post"] = post
-        comment["authorUsername"] = currentUser["username"]
-        comment["authorImage"] = currentUser["profileImage"]
-        
-        self.post.add(comment, forKey: "comments")
-        
-        self.post.saveInBackground { (success, error) in
-            if success {
-                let comments = (self.post["comments"] as? [PFObject]) ?? []
-                let numberOfComments = comments.count
-                self.commentCountLabel.text = "\(numberOfComments )"
-                self.commentsTableView.reloadData()
-            }
-            else {
-                print("Error: \(error?.localizedDescription ?? "There was an error saving the comment.")")
-            }
-        }
+        showsCommentBar = true
+        becomeFirstResponder()
+        commentBar.inputTextView.becomeFirstResponder()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
