@@ -49,7 +49,6 @@ class SentimentAnalysisViewController: UIViewController {
                 var sentimentScore = 0
                 
                 for c in 0..<tweetsFullText.count {
-                    //print(tweetsFullText[c].text)
                     print(tweetPredictions[c].label + "\n\n")
                     
                     if tweetPredictions[c].label == "Positive" {
@@ -59,7 +58,6 @@ class SentimentAnalysisViewController: UIViewController {
                         sentimentScore -= 1
                     }
                 }
-                
                 
                 if sentimentScore > 10 {
                     self.sentimentLabel.text = "Positive"
